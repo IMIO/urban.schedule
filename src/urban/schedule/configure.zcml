@@ -8,6 +8,7 @@
   <i18n:registerTranslations directory="locales" />
 
   <include package=".browser" />
+  <include package=".conditions" />
 
   <include file="permissions.zcml" />
 
@@ -33,7 +34,5 @@
     factory=".setuphandlers.HiddenProfiles"
     name="urban.schedule-hiddenprofiles"
     />
-
-  <!-- -*- extra stuff goes here -*- -->
 
 </configure>

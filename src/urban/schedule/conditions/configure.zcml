@@ -1,0 +1,27 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="urban.schedule"
+    >
+
+  <!-- creation -->
+
+  <adapter
+      factory=".creation.IsCODT2024"
+      provides="imio.schedule.interfaces.ICreationCondition"
+      for="Products.urban.interfaces.IGenericLicence
+           imio.schedule.content.task_config.ITaskConfig"
+      name="urban.schedule.condition.is_codt_2024_creation"
+      i18n:attributes="name"
+      />
+
+  <adapter
+      factory=".creation.IsNotCODT2024"
+      provides="imio.schedule.interfaces.ICreationCondition"
+      for="Products.urban.interfaces.IGenericLicence
+           imio.schedule.content.task_config.ITaskConfig"
+      name="urban.schedule.condition.is_not_codt_2024_creation"
+      i18n:attributes="name"
+      />
+
+</configure>
