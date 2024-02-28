@@ -7,11 +7,13 @@ from plone import api
 import json
 import os
 
+
 class ExistingContent(Enum):
-    SKIP=0
-    REPLACE=1
-    UPDATE=2
-    IGNORE=3
+    SKIP = 0
+    REPLACE = 1
+    UPDATE = 2
+    IGNORE = 3
+
 
 def remove_uid(data):
     new_data = []
@@ -25,26 +27,19 @@ def remove_uid(data):
 
 
 def remove_none(data):
-    return [
-        {
-            k: v 
-            for k, v in item.items()
-            if v is not None
-        }
-        for item in data
-    ]
+    return [{k: v for k, v in item.items() if v is not None} for item in data]
 
 
 def import_json_config(
-        json_path,
-        context,
-        existing_content=ExistingContent.SKIP,
-    ):
+    json_path,
+    context,
+    existing_content=ExistingContent.SKIP,
+):
 
     if not os.path.isfile(json_path):
         raise ValueError("{} does not exist".format(json_path))
 
-    with open(json_path, 'r') as f:
+    with open(json_path, "r") as f:
         data = json.load(f)
 
     portal = api.portal.get()
@@ -80,15 +75,15 @@ def import_all_config(
     existing_content=ExistingContent.SKIP,
 ):
     licences_type = os.listdir(base_json_path)
-    
+
     for licence_type in licences_type:
         macro_tasks = os.listdir(os.path.join(base_json_path, licence_type))
-        
+
         for macro_task in macro_tasks:
-            json_path = os.path.join(base_json_path, licence_type,macro_task)
+            json_path = os.path.join(base_json_path, licence_type, macro_task)
             context_plone = os.path.join(base_context_path, licence_type, config_type)
             import_json_config(
                 json_path=json_path,
                 context=context_plone,
-                existing_content=existing_content
+                existing_content=existing_content,
             )
