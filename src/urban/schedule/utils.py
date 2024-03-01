@@ -69,18 +69,21 @@ def import_json_config(
 
 
 def import_all_config(
-    base_json_path="src/urban.schedule/src/urban/schedule/profiles/config",
+    base_json_path="./profiles/config",
     base_context_path="/Plone/portal_urban",
     config_type="schedule",
     existing_content=ExistingContent.SKIP,
 ):
-    licences_type = os.listdir(base_json_path)
+    directory_path = os.path.dirname(os.path.realpath(__file__))
 
-    for licence_type in licences_type:
-        macro_tasks = os.listdir(os.path.join(base_json_path, licence_type))
+    licences_types = os.walk(os.path.normpath(os.path.join(directory_path, base_json_path)))
 
-        for macro_task in macro_tasks:
-            json_path = os.path.join(base_json_path, licence_type, macro_task)
+    for root, dirs, files in licences_types:
+        if files == []:
+            continue
+        for file in files:
+            json_path = os.path.join(root, file)
+            licence_type = root.split('/')[-1]
             context_plone = os.path.join(base_context_path, licence_type, config_type)
             import_json_config(
                 json_path=json_path,
