@@ -1,7 +1,7 @@
 <configure
     xmlns="http://namespaces.zope.org/zope"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="imio.dms.mail">
+    i18n_domain="urban.schedule">
 
     <genericsetup:upgradeStep
         title="Import schedule config"
