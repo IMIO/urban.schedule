@@ -60,6 +60,7 @@ setup(
             "plone.app.robotframework[debug]",
             "plone.app.testing",
             "plone.testing",
+            "collective.exportimport",
         ],
     },
     entry_points="""
