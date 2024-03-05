@@ -33,7 +33,6 @@ def remove_none(data):
 def import_json_config(
     json_path,
     context,
-    existing_content=ExistingContent.SKIP,
 ):
 
     if not os.path.isfile(json_path):
@@ -55,7 +54,7 @@ def import_json_config(
     import_content = ImportContent(context, request)
 
     import_content.import_to_current_folder = False
-    import_content.handle_existing_content = existing_content
+    import_content.handle_existing_content = ExistingContent.SKIP
     import_content.limit = None
     import_content.commit = None
     import_content.import_old_revisions = False
@@ -72,7 +71,6 @@ def import_all_config(
     base_json_path="./profiles/config",
     base_context_path="/Plone/portal_urban",
     config_type="schedule",
-    existing_content=ExistingContent.SKIP,
 ):
     directory_path = os.path.dirname(os.path.realpath(__file__))
 
@@ -88,5 +86,5 @@ def import_all_config(
             import_json_config(
                 json_path=json_path,
                 context=context_plone,
-                existing_content=existing_content,
+                existing_content=ExistingContent.SKIP,
             )
