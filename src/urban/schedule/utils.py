@@ -3,6 +3,7 @@
 from collective.exportimport.import_content import ImportContent
 from enum import Enum
 from plone import api
+from zope.component.hooks import getSite
 
 import json
 import os
@@ -69,12 +70,16 @@ def import_json_config(
 
 def import_all_config(
     base_json_path="./profiles/config",
-    base_context_path="/Plone/portal_urban",
+    base_context_path="portal_urban",
     config_type="schedule",
 ):
     directory_path = os.path.dirname(os.path.realpath(__file__))
 
-    licences_types = os.walk(os.path.normpath(os.path.join(directory_path, base_json_path)))
+    licences_types = os.walk(
+        os.path.normpath(os.path.join(directory_path, base_json_path))
+    )
+
+    root_site = getSite()
 
     for root, dirs, files in licences_types:
         if files == []:
@@ -82,7 +87,9 @@ def import_all_config(
         for file in files:
             json_path = os.path.join(root, file)
             licence_type = root.split('/')[-1]
-            context_plone = os.path.join(base_context_path, licence_type, config_type)
+            context_plone = os.path.normpath(
+                os.path.join(root_site.id, base_context_path, licence_type, config_type)
+            )
             import_json_config(
                 json_path=json_path,
                 context=context_plone,
