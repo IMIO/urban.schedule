@@ -60,7 +60,15 @@ def import_json_config(
     json_path,
     context,
 ):
+    """
+    This function is used to import a json file (exported with c.exportimport)
 
+    :param json_path: Path to the json to be imported
+    :type json_path: String
+    :param context: Path to or object of the context where the json will be imported
+    :type context: String or plone object
+    :raises ValueError: Raise if the json doesn't exist
+    """
     if not os.path.isfile(json_path):
         raise ValueError("{} does not exist".format(json_path))
 
@@ -99,6 +107,16 @@ def import_all_config(
     base_context_path="portal_urban",
     config_type="schedule",
 ):
+    """
+    Function used to import all json inside a folder
+
+    :param base_json_path: Root folder whre to find json, defaults to "./profiles/config"
+    :type base_json_path: String, optional
+    :param base_context_path: Path to or object of the context where the json will be imported, defaults to "portal_urban"
+    :type base_context_path: String or plone object, optional
+    :param config_type: config folder whre to import, defaults to "eventconfigs"
+    :type config_type: String, optional
+    """
     directory_path = os.path.dirname(os.path.realpath(__file__))
 
     licences_types = os.walk(
