@@ -55,8 +55,7 @@ def fix_all_ids(data):
 
 
 def import_json_config(
-    json_path,
-    context,
+    json_path, context, handle_existing_content=ExistingContent.SKIP
 ):
     """
     This function is used to import a json file (exported with c.exportimport)
@@ -86,7 +85,7 @@ def import_json_config(
     import_content = ImportContent(context, request)
 
     import_content.import_to_current_folder = False
-    import_content.handle_existing_content = ExistingContent.SKIP
+    import_content.handle_existing_content = handle_existing_content.value
     import_content.limit = None
     import_content.commit = None
     import_content.import_old_revisions = False
@@ -104,6 +103,7 @@ def import_all_config(
     base_json_path="./profiles/config",
     base_context_path="portal_urban",
     config_type="schedule",
+    handle_existing_content=ExistingContent.SKIP,
 ):
     """
     Function used to import all json inside a folder
@@ -140,4 +140,5 @@ def import_all_config(
             import_json_config(
                 json_path=json_path,
                 context=context_plone,
+                handle_existing_content=handle_existing_content,
             )
