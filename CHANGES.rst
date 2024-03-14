@@ -8,6 +8,17 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.0a2 (2024-03-14)
+--------------------
+
+Bug fixes:
+
+
+- Fix import uid and @id and fix existing content handling
+  Fix enum dependency
+  [jchandelle] (URB-3005)
+
+
 1.0.0a1 (2024-03-12)
 --------------------
 
