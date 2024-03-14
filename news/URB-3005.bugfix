@@ -1,2 +1,5 @@
 Fix import uid and @id and fix existing content handling
 [jchandelle]
+
+Fix enum dependency
+[jchandelle]
