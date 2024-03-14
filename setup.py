@@ -52,6 +52,7 @@ setup(
         "plone.app.dexterity",
         "plone.restapi",
         "z3c.jbot",
+        'enum34',
     ],
     extras_require={
         "test": [
