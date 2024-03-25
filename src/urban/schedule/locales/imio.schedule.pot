@@ -15,20 +15,16 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: urban.schedule\n"
+"Domain: imio.schedule\n"
 
-#: ../configure.zcml:25
-msgid "Installs the urban.schedule add-on."
+#: ../conditions/configure.zcml:16
+msgid "urban.schedule.condition.is_codt_2024_creation"
 msgstr ""
 
-#: ../configure.zcml:34
-msgid "Uninstalls the urban.schedule add-on."
+#: ../conditions/configure.zcml:25
+msgid "urban.schedule.condition.is_not_codt_2024_creation"
 msgstr ""
 
-#: ../configure.zcml:25
-msgid "urban.schedule"
-msgstr ""
-
-#: ../configure.zcml:34
-msgid "urban.schedule (uninstall)"
+#: ../conditions/configure.zcml:36
+msgid "urban.schedule.start_date.acknowledgment_limit_date"
 msgstr ""

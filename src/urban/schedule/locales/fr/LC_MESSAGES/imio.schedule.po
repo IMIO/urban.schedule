@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,20 +12,16 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: urban.schedule\n"
+"Domain: DOMAIN\n"
 
-#: ../configure.zcml:25
-msgid "Installs the urban.schedule add-on."
-msgstr ""
+#: ../conditions/configure.zcml:16
+msgid "urban.schedule.condition.is_codt_2024_creation"
+msgstr "Est un dossier CODT 2024"
 
-#: ../configure.zcml:34
-msgid "Uninstalls the urban.schedule add-on."
-msgstr ""
+#: ../conditions/configure.zcml:25
+msgid "urban.schedule.condition.is_not_codt_2024_creation"
+msgstr "N'est pas un dossier CODT 2024"
 
-#: ../configure.zcml:25
-msgid "urban.schedule"
-msgstr ""
-
-#: ../configure.zcml:34
-msgid "urban.schedule (uninstall)"
-msgstr ""
+#: ../conditions/configure.zcml:36
+msgid "urban.schedule.start_date.acknowledgment_limit_date"
+msgstr "Date limite d'accusé de réception"
