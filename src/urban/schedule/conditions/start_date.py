@@ -15,6 +15,7 @@ class AcknowledgmentLimitDate(StartDate):
     """
 
     def start_date(self):
+        # XXX: executed 5 times at licence creation during test; why ?
         licence = self.task_container
         limit_date = None
         if (
