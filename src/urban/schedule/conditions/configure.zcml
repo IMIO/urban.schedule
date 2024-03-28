@@ -35,4 +35,15 @@
       i18n:attributes="name"
       />
 
+  <!-- delay -->
+
+  <adapter
+    for="Products.urban.interfaces.IGenericLicence
+         imio.schedule.content.task.IAutomatedTask"
+    provides="imio.schedule.interfaces.ICalculationDelay"
+    factory=".delay.CalculationDelayOpinionFd"
+    name="schedule.calculation_delay_opinion_fd"
+    i18n:attributes="name"
+    />
+
 </configure>
