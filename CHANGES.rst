@@ -8,6 +8,26 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.0a3 (2024-03-30)
+--------------------
+
+New features:
+
+
+- Store checking completion task config for liege.
+  Store reception task config for CODT Buildlicence and CU on Urban classic.
+  [daggelpop, mpeeters] (URB-3005)
+
+
+Internal:
+
+
+- Add french translations for conditions.
+  Handle specific configuration for Liege and Urban classic.
+  Improve import of config by adding `match_filename` optional parameter to only import one config filename.
+  [mpeeters] (URB-3005)
+
+
 1.0.0a2 (2024-03-14)
 --------------------
 

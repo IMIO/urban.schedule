@@ -1,4 +1,0 @@
-Add french translations for conditions.
-Handle specific configuration for Liege and Urban classic.
-Improve import of config by adding `match_filename` optional parameter to only import one config filename.
-[mpeeters]
