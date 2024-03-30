@@ -110,16 +110,21 @@ def import_all_config(
     base_context_path="portal_urban",
     config_type="schedule",
     handle_existing_content=ExistingContent.SKIP,
+    match_filename=None,
 ):
     """
     Function used to import all json inside a folder
 
     :param base_json_path: Root folder whre to find json, defaults to "./profiles/config"
     :type base_json_path: String, optional
-    :param base_context_path: Path to or object of the context where the json will be imported, defaults to "portal_urban"
+    :param base_context_path: Path to or object of the context where the json will be
+                              imported, defaults to "portal_urban"
     :type base_context_path: String or plone object, optional
-    :param config_type: config folder whre to import, defaults to "eventconfigs"
+    :param config_type: config folder where to import, defaults to "schedule"
     :type config_type: String, optional
+    :param match_filename: a filename that will be use to restrict the imported configs,
+                           defaults to "None"
+    :type match_filename: String, optional
     """
     directory_path = os.path.dirname(os.path.realpath(__file__))
 
@@ -133,6 +138,8 @@ def import_all_config(
         if files == []:
             continue
         for file in files:
+            if match_filename is not None and file != match_filename:
+                continue
             json_path = os.path.join(root, file)
             licence_type = root.split("/")[-1]
             context_plone = os.path.normpath(
