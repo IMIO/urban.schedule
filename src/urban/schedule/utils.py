@@ -16,6 +16,12 @@ class ExistingContent(Enum):
     IGNORE = 3
 
 
+def get_configs():
+    """Return the configs defined in `URBAN_SCHEDULE_CONFIGS` env variable"""
+    configs = os.environ.get("URBAN_SCHEDULE_CONFIGS", "default,standard")
+    return configs.split(",")
+
+
 def remove_uid(data):
     new_data = []
 
