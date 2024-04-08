@@ -43,3 +43,18 @@ class AcknowledgmentLimitDate(StartDate):
             )
             limit_date = ack and ack.getEventDate() + annonced_delay
         return limit_date
+
+
+class FDOpinionLimitDate(StartDate):
+
+    def start_date(self):
+        licence = self.task_container
+        limit_date = None
+        if hasattr(licence, "getLastWalloonRegionOpinionRequest"):
+            fd_opnion = licence.getLastWalloonRegionOpinionRequest()
+            date = fd_opnion and fd_opnion.getEventDate()
+            delay = 35
+            if licence.is_CODT2024() is True:
+                delay = 30
+            limit_date = date and date + delay or None
+        return limit_date
