@@ -103,7 +103,7 @@
     "additional_delay_type": "absolute", 
     "allow_discussion": false, 
     "calculation_delay": [
-        "schedule.calculation_delay_opinion_fd"
+        "urban.schedule.delay.annonced_delay"
     ], 
     "created": "2016-08-22T03:44:53+00:00", 
     "creation_conditions": [
@@ -156,7 +156,7 @@
             "display_status": true
         }
     ], 
-    "start_date": "urban.schedule.start_date.acknowledgment_date", 
+    "start_date": "urban.schedule.start_date.opinion_fd_limit_fd", 
     "starting_states": [
         "FD_opinion", 
         "decision_in_progress", 
@@ -552,7 +552,7 @@
         "procedure_validated"
     ], 
     "default_assigned_group": "administrative_validators", 
-    "default_assigned_user": "burletv", 
+    "default_assigned_user": "to_assign", 
     "description": "", 
     "enabled": true, 
     "end_conditions": [
