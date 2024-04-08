@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
-from Products.CMFPlone.utils import get_installer
 from plone import api
 from plone.app.testing import TEST_USER_ID
 from plone.app.testing import setRoles
@@ -17,7 +16,7 @@ class TestSetup(unittest.TestCase):
     def setUp(self):
         """Custom shared utility setup for tests."""
         self.portal = self.layer["portal"]
-        self.installer = get_installer(self.portal, self.layer["request"])
+        self.installer = api.portal.get_tool('portal_quickinstaller')
 
     def test_product_installed(self):
         """Test if urban.schedule is installed."""
@@ -37,7 +36,7 @@ class TestUninstall(unittest.TestCase):
 
     def setUp(self):
         self.portal = self.layer["portal"]
-        self.installer = get_installer(self.portal, self.layer["request"])
+        self.installer = api.portal.get_tool('portal_quickinstaller')
         roles_before = api.user.get_roles(TEST_USER_ID)
         setRoles(self.portal, TEST_USER_ID, ["Manager"])
         self.installer.uninstall_product("urban.schedule")
