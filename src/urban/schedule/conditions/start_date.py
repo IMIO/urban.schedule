@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
+from datetime import timedelta
 
+from Products.urban.interfaces import IIntentionToSubmitAmendedPlans
 from imio.schedule.content.logic import StartDate
 from imio.schedule.interfaces import ICalculationDelay
 
@@ -42,4 +44,26 @@ class AcknowledgmentLimitDate(StartDate):
                 or 0
             )
             limit_date = ack and ack.getEventDate() + annonced_delay
+        return limit_date
+
+
+class AmendedPlansLimitDate(StartDate):
+    """
+    Returns amended plans event's limit date, or its receipt date + 180 days
+    """
+
+    def start_date(self):
+        licence = self.task_container
+        event = licence.getLastEvent(IIntentionToSubmitAmendedPlans)
+        limit_date = None
+
+        if event:
+            ultime_date = event.getUltimeDate()
+            if ultime_date:
+                limit_date = ultime_date
+            else:
+                receipt_date = event.getReceiptDate()
+                if receipt_date:
+                    limit_date = receipt_date + timedelta(days=180)
+
         return limit_date
