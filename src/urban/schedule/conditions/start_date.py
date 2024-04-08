@@ -2,9 +2,7 @@
 
 from imio.schedule.content.logic import StartDate
 from imio.schedule.interfaces import ICalculationDelay
-
 from zope.component import queryMultiAdapter
-
 
 
 class AcknowledgmentLimitDate(StartDate):
@@ -46,7 +44,6 @@ class AcknowledgmentLimitDate(StartDate):
 
 
 class FDOpinionLimitDate(StartDate):
-
     def start_date(self):
         licence = self.task_container
         limit_date = None
