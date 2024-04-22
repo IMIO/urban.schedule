@@ -8,7 +8,6 @@ from imio.schedule.interfaces import ICalculationDelay
 from zope.component import queryMultiAdapter
 
 
-
 class AcknowledgmentLimitDate(StartDate):
     """
     Acknowledgment limit date is the deposit date + (20 or 30).
@@ -64,6 +63,6 @@ class AmendedPlansLimitDate(StartDate):
             else:
                 receipt_date = event.getReceiptDate()
                 if receipt_date:
-                    limit_date = receipt_date + timedelta(days=180)
+                    limit_date = receipt_date + 180
 
         return limit_date
