@@ -17,7 +17,7 @@
         }
     ],
     "creation_state": [
-        "frozen_suspension"
+        "suspension"
     ],
     "default_assigned_group": null,
     "default_assigned_user": "Admin_urba",
@@ -62,7 +62,7 @@
     "start_conditions": null,
     "start_date": "urban.schedule.start_date.amended_plans_limit_date",
     "starting_states": [
-        "frozen_suspension"
+        "suspension"
     ],
     "thaw_conditions": null,
     "thaw_states": [],
