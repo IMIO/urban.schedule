@@ -3,7 +3,7 @@
     "@type": "TaskConfig",
     "UID": "5ed6a34fec9843f4890a75d7c2bdf078",
     "activate_recurrency": false,
-    "additional_delay": 0,
+    "additional_delay": "0",
     "additional_delay_type": "absolute",
     "allow_discussion": false,
     "calculation_delay": [
