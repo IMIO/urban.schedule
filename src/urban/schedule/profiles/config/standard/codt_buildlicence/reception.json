@@ -4,7 +4,7 @@
     "@type": "MacroTaskConfig",
     "UID": "f2b7c43556b543e08ccdd8480098c6d5",
     "activate_recurrency": true,
-    "additional_delay": 0,
+    "additional_delay": "0",
     "additional_delay_type": "absolute",
     "allow_discussion": false,
     "calculation_delay": [
@@ -73,7 +73,7 @@
     "@type": "TaskConfig",
     "UID": "e3f03935785a4ed9bf2c5153c4ef0b8c",
     "activate_recurrency": false,
-    "additional_delay": 0,
+    "additional_delay": "0",
     "additional_delay_type": "absolute",
     "allow_discussion": false,
     "calculation_delay": [
@@ -161,7 +161,7 @@
     "@type": "TaskConfig",
     "UID": "84879d42a40343d18b0ac71f2253bfd8",
     "activate_recurrency": false,
-    "additional_delay": 5,
+    "additional_delay": "5",
     "additional_delay_type": null,
     "allow_discussion": false,
     "calculation_delay": [
@@ -319,7 +319,7 @@
     "@type": "TaskConfig",
     "UID": "618e2b3580274ac080b3cf94777467e6",
     "activate_recurrency": false,
-    "additional_delay": 30,
+    "additional_delay": "30",
     "additional_delay_type": null,
     "allow_discussion": false,
     "calculation_delay": [
@@ -413,7 +413,7 @@
     "@type": "TaskConfig",
     "UID": "15893d6398a74f5b92dedaed62075460",
     "activate_recurrency": false,
-    "additional_delay": 0,
+    "additional_delay": "0",
     "additional_delay_type": "absolute",
     "allow_discussion": false,
     "calculation_delay": [
