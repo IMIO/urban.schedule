@@ -33,14 +33,21 @@ class AcknowledgmentLimitDate(StartDate):
             deposit_event = licence.getLastDeposit()
             intention_event = licence.getLastEvent(IIntentionToSubmitAmendedPlans)
 
-            if not deposit_event or not deposit_event.getEventDate():  # not supposed to happen
+            deposit_event_date = deposit_event.getEventDate()
+            intention_receipt_date = intention_event.getReceiptDate()
+
+            if not deposit_event or not deposit_event_date:  # not supposed to happen
                 return limit_date
 
             deposit_event_delay = 30 if licence.is_CODT2024() is True else 20
 
+            # shouldn't happen; just in case, do as if there were no intention
+            if not intention_receipt_date:
+                limit_date = deposit_event_date + deposit_event_delay
+
             # modified plans have been submitted
-            if intention_event.getEventDate() < deposit_event.getEventDate():
-                date = deposit_event.getEventDate()
+            if intention_receipt_date < deposit_event_date:
+                date = deposit_event_date
                 limit_date = date + deposit_event_delay
             else:
                 # no modified plans received (either still waiting, or delay is over)
@@ -52,6 +59,8 @@ class AcknowledgmentLimitDate(StartDate):
                     if receipt_date:
                         limit_date = receipt_date + 180
 
+                if not limit_date:
+                    return None
                 limit_date = limit_date + deposit_event_delay
         elif hasattr(licence, "getLastAcknowledgment"):
             # XXX Need review for CODT 2024
