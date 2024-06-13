@@ -4,7 +4,6 @@ from datetime import timedelta
 from Products.urban.interfaces import IIntentionToSubmitAmendedPlans
 from imio.schedule.content.logic import StartDate
 from imio.schedule.interfaces import ICalculationDelay
-
 from zope.component import queryMultiAdapter
 
 
@@ -97,5 +96,20 @@ class AmendedPlansLimitDate(StartDate):
                 receipt_date = event.getReceiptDate()
                 if receipt_date:
                     limit_date = receipt_date + 180
+                    
+        return limit_date
+
+
+class FDOpinionLimitDate(StartDate):
+    def start_date(self):
+        licence = self.task_container
+        limit_date = None
+        if hasattr(licence, "getLastWalloonRegionOpinionRequest"):
+            fd_opnion = licence.getLastWalloonRegionOpinionRequest()
+            date = fd_opnion and fd_opnion.getEventDate()
+            delay = 35
+            if licence.is_CODT2024() is True:
+                delay = 30
+            limit_date = date and date + delay or None
 
         return limit_date

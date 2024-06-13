@@ -44,7 +44,6 @@
       i18n:attributes="name"
       />
 
-
   <adapter
       factory=".start_date.AmendedPlansLimitDate"
       provides="imio.schedule.interfaces.IStartDate"
@@ -52,6 +51,15 @@
            imio.schedule.content.task.IAutomatedTask"
       name="urban.schedule.start_date.amended_plans_limit_date"
       i18n:attributes="name"
-  />
+      />
+
+  <adapter
+      factory=".start_date.FDOpinionLimitDate"
+      provides="imio.schedule.interfaces.IStartDate"
+      for="Products.urban.interfaces.IGenericLicence
+          imio.schedule.content.task.IAutomatedTask"
+      name="urban.schedule.start_date.opinion_fd_limit_fd"
+      i18n:attributes="name"
+      />
 
 </configure>

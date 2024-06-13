@@ -22,3 +22,16 @@ def update_reception(context):
     else:
         logger.info("nothing to upgrade")
     logger.info("upgrade done!")
+
+
+def update_fd_opinion(context):
+    logger.info("starting : Update fd opinion tasks")
+    if "liege" in utils.get_configs():
+        utils.import_all_config(
+            base_json_path="./profiles/config/liege",
+            handle_existing_content=utils.ExistingContent.UPDATE,
+            match_filename="avis-fd.json",
+        )
+    else:
+        logger.info("nothing to upgrade")
+    logger.info("upgrade done!")
