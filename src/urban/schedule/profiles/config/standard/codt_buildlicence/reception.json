@@ -4,7 +4,7 @@
     "@type": "MacroTaskConfig",
     "UID": "f2b7c43556b543e08ccdd8480098c6d5",
     "activate_recurrency": true,
-    "additional_delay": 0,
+    "additional_delay": "0",
     "additional_delay_type": "absolute",
     "allow_discussion": false,
     "calculation_delay": [
@@ -72,8 +72,8 @@
     "@relative_path": "/portal_urban/codt_buildlicence/schedule/reception/check_completion",
     "@type": "TaskConfig",
     "UID": "e3f03935785a4ed9bf2c5153c4ef0b8c",
-    "activate_recurrency": false,
-    "additional_delay": 0,
+    "activate_recurrency": true,
+    "additional_delay": "0",
     "additional_delay_type": "absolute",
     "allow_discussion": false,
     "calculation_delay": [
@@ -161,7 +161,7 @@
     "@type": "TaskConfig",
     "UID": "84879d42a40343d18b0ac71f2253bfd8",
     "activate_recurrency": false,
-    "additional_delay": 5,
+    "additional_delay": "5",
     "additional_delay_type": null,
     "allow_discussion": false,
     "calculation_delay": [
@@ -229,7 +229,7 @@
     "@relative_path": "/portal_urban/codt_buildlicence/schedule/reception/procedure_choice_fd",
     "@type": "TaskConfig",
     "UID": "9cea6ad87cdd4d8ca0e03d499290ca3f",
-    "activate_recurrency": false,
+    "activate_recurrency": true,
     "additional_delay": null,
     "additional_delay_type": null,
     "allow_discussion": false,
@@ -318,8 +318,8 @@
     "@relative_path": "/portal_urban/codt_buildlicence/schedule/reception/procedure_choice_past_20days",
     "@type": "TaskConfig",
     "UID": "618e2b3580274ac080b3cf94777467e6",
-    "activate_recurrency": false,
-    "additional_delay": 30,
+    "activate_recurrency": true,
+    "additional_delay": "30",
     "additional_delay_type": null,
     "allow_discussion": false,
     "calculation_delay": [
@@ -412,8 +412,8 @@
     "@relative_path": "/portal_urban/codt_buildlicence/schedule/reception/send_acknoledgment",
     "@type": "TaskConfig",
     "UID": "15893d6398a74f5b92dedaed62075460",
-    "activate_recurrency": false,
-    "additional_delay": 0,
+    "activate_recurrency": true,
+    "additional_delay": "0",
     "additional_delay_type": "absolute",
     "allow_discussion": false,
     "calculation_delay": [
@@ -486,4 +486,83 @@
             }
         ]
     }
-}]
+},
+{
+    "@id": "http://localhost:8081/seraing/seraing/portal_urban/codt_buildlicence/schedule/reception/attente_plans_modifies",
+    "@relative_path": "/portal_urban/codt_buildlicence/schedule/reception/attente_plans_modifies",
+    "@type": "TaskConfig",
+    "UID": "5ed6a34fec9843f4890a75d7c2bdf078",
+    "activate_recurrency": false,
+    "additional_delay": "0",
+    "additional_delay_type": "absolute",
+    "allow_discussion": false,
+    "calculation_delay": [
+        "schedule.calculation_default_delay"
+    ],
+    "created": "2024-04-29T14:13:47+00:00",
+    "creation_conditions": [
+        {
+            "condition": "urban.schedule.condition.has_amended_plans",
+            "display_status": false
+        }
+    ],
+    "creation_state": [
+        "suspension"
+    ],
+    "default_assigned_group": "urban_editors",
+    "default_assigned_user": "urban.assign_folder_manager",
+    "description": "",
+    "enabled": true,
+    "end_conditions": null,
+    "ending_states": [
+        "accepted",
+        "deposit",
+        "inacceptable",
+        "incomplete",
+        "complete",
+        "refused",
+        "retired",
+        "obsolete"
+    ],
+    "freeze_conditions": null,
+    "freeze_states": [],
+    "id": "attente_plans_modifies",
+    "is_folderish": true,
+    "layout": "view",
+    "marker_interfaces": [],
+    "modified": "2024-04-29T08:57:38+00:00",
+    "parent": {
+        "@id": "http://localhost:8081/seraing/seraing/portal_urban/codt_buildlicence/schedule/reception",
+        "@type": "MacroTaskConfig",
+        "UID": "f2b7c43556b543e08ccdd8480098c6d5",
+        "description": "",
+        "review_state": "private",
+        "title": "R\u00e9ception du dossier"
+    },
+    "recurrence_conditions": null,
+    "recurrence_states": [],
+    "review_state": "private",
+    "round_to_day": "0",
+    "start_conditions": null,
+    "start_date": "urban.schedule.start_date.amended_plans_limit_date",
+    "starting_states": [
+        "suspension"
+    ],
+    "thaw_conditions": null,
+    "thaw_states": [],
+    "title": "En attente de plans modifi\u00e9s",
+    "version": "current",
+    "warning_delay": null,
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null,
+                "actor": "admin",
+                "comments": "",
+                "review_state": "private",
+                "time": "2024-04-29T14:13:47+00:00"
+            }
+        ]
+    }
+}
+]

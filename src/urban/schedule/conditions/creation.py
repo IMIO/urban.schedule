@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+from Products.urban.interfaces import IIntentionToSubmitAmendedPlans
 from imio.schedule.content.condition import CreationCondition
 
 
@@ -17,3 +17,12 @@ class IsNotCODT2024(CreationCondition):
     def evaluate(self):
         licence = self.task_container
         return licence.is_CODT2024() is not True
+
+
+class HasAmendedPlans(CreationCondition):
+    """"""
+
+    def evaluate(self):
+        licence = self.task_container
+        event = licence.getLastEvent(IIntentionToSubmitAmendedPlans)
+        return event is not None
