@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2024-03-25 12:01+0000\n"
+"POT-Creation-Date: 2024-04-02 12:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,4 +27,8 @@ msgstr ""
 
 #: ../conditions/configure.zcml:36
 msgid "urban.schedule.start_date.acknowledgment_limit_date"
+msgstr ""
+
+#: ../conditions/configure.zcml:45
+msgid "urban.schedule.start_date.opinion_fd_limit_fd"
 msgstr ""
