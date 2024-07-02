@@ -12,7 +12,7 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: urban.schedule\n"
 
 #: ../configure.zcml:25
 msgid "Installs the urban.schedule add-on."
