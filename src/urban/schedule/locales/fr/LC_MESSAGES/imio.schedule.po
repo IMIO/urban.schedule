@@ -12,7 +12,7 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: DOMAIN\n"
+"Domain: imio.schedule\n"
 
 #: ../conditions/configure.zcml:16
 msgid "urban.schedule.condition.is_codt_2024_creation"
@@ -25,6 +25,9 @@ msgstr "N'est pas un dossier CODT 2024"
 #: ../conditions/configure.zcml:36
 msgid "urban.schedule.start_date.acknowledgment_limit_date"
 msgstr "Date limite d'accusé de réception"
+
+msgid "urban.schedule.start_date.amended_plans_limit_date"
+msgstr "Date limite de dépot de plan modifié"
 
 #: ../conditions/configure.zcml:45
 msgid "urban.schedule.start_date.opinion_fd_limit_fd"

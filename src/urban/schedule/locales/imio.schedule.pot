@@ -29,6 +29,9 @@ msgstr ""
 msgid "urban.schedule.start_date.acknowledgment_limit_date"
 msgstr ""
 
+msgid "urban.schedule.start_date.amended_plans_limit_date"
+msgstr ""
+
 #: ../conditions/configure.zcml:45
 msgid "urban.schedule.start_date.opinion_fd_limit_fd"
 msgstr ""
