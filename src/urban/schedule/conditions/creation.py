@@ -26,3 +26,15 @@ class HasAmendedPlans(CreationCondition):
         licence = self.task_container
         event = licence.getLastEvent(IIntentionToSubmitAmendedPlans)
         return event is not None
+
+
+class IsPloneMeetingMeetingDone(CreationCondition):
+    pass
+
+
+class IsPloneMeetingCollegeDone(IsPloneMeetingMeetingDone):
+    pass
+
+
+class IsPloneMeetingCouncilDone(IsPloneMeetingMeetingDone):
+    pass

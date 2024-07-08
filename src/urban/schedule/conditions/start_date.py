@@ -96,7 +96,7 @@ class AmendedPlansLimitDate(StartDate):
                 receipt_date = event.getReceiptDate()
                 if receipt_date:
                     limit_date = receipt_date + 180
-                    
+
         return limit_date
 
 
@@ -113,3 +113,15 @@ class FDOpinionLimitDate(StartDate):
             limit_date = date and date + delay or None
 
         return limit_date
+
+
+class PloneMeetingMeetingDecidedDate(StartDate):
+    pass
+
+
+class PloneMeetingCollegeDecidedDate(PloneMeetingMeetingDecidedDate):
+    pass
+
+
+class PloneMeetingCouncilDecidedDate(PloneMeetingMeetingDecidedDate):
+    pass
