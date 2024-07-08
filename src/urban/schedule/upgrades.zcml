@@ -30,4 +30,12 @@
       profile="urban.schedule:default"
       />
 
+  <genericsetup:upgradeStep
+    title="Import roaddecree schedule config"
+    description=""
+    source="1002"
+    destination="1003"
+    handler="urban.schedule.upgrades.import_roaddecree_schedule_config"
+    profile="urban.schedule:default"
+    />
 </configure>
