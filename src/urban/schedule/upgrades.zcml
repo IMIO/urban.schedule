@@ -40,7 +40,7 @@
       />
 
   <genericsetup:upgradeStep
-    title="Import roaddecree schedule config for liege"
+    title="Import roaddecree schedule config"
     description=""
     source="1004"
     destination="1005"
