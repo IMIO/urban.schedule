@@ -2,6 +2,11 @@
 from Products.urban.interfaces import ICODT_BaseBuildLicence
 from Products.urban.interfaces import IIntentionToSubmitAmendedPlans
 from imio.schedule.content.condition import CreationCondition
+from plone import api
+from zope.component import getMultiAdapter
+from Products.urban.interfaces import ISimpleCollegeEvent
+
+from parts.omelette.Products.urban.interfaces import ICODT_BaseBuildLicence
 
 
 class IsCODT2024(CreationCondition):
@@ -32,10 +37,13 @@ class HasAmendedPlans(CreationCondition):
 class IsPloneMeetingCollegeDone(CreationCondition):
     def evaluate(self):
         licence = self.task_container
-        return True if licence.get_last_college_date() else False
+        if ICODT_BaseBuildLicence.providedBy(licence):
+            return True if licence.get_last_college_date() else False
+
 
 
 class IsPloneMeetingCouncilDone(CreationCondition):
     def evaluate(self):
         licence = self.task_container
-        return True if licence.get_last_council_date() else False
+        if ICODT_BaseBuildLicence.providedBy(licence):
+            return True if licence.get_last_council_date() else False
