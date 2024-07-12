@@ -16,7 +16,9 @@
         "display_status": true
       }
     ],
-    "creation_state": [],
+    "creation_state": [
+        "college_council_passage"
+    ],
     "default_assigned_group": null,
     "default_assigned_user": "Admin_urba",
     "description": "",
@@ -79,7 +81,9 @@
         "display_status": true
       }
     ],
-    "creation_state": [],
+    "creation_state": [
+        "college_council_passage"
+    ],
     "default_assigned_group": null,
     "default_assigned_user": "Admin_urba",
     "description": "",
@@ -142,7 +146,9 @@
         "display_status": true
       }
     ],
-    "creation_state": [],
+    "creation_state": [
+        "college_council_passage"
+    ],
     "default_assigned_group": "administrative_editors",
     "default_assigned_user": "liege.urban.schedule.assign_task_owner",
     "description": "",
@@ -210,7 +216,9 @@
         "display_status": true
       }
     ],
-    "creation_state": [],
+    "creation_state": [
+        "college_council_passage"
+    ],
     "default_assigned_group": "administrative_editors",
     "default_assigned_user": "liege.urban.schedule.assign_task_owner",
     "description": "",
