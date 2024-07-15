@@ -5,7 +5,7 @@ from plone import api
 from zope.component import getMultiAdapter
 from Products.urban.interfaces import ISimpleCollegeEvent
 
-from parts.omelette.Products.urban.interfaces import ICODT_BaseBuildLicence
+from Products.urban.interfaces import ICODT_BaseBuildLicence
 
 
 class IsCODT2024(CreationCondition):
