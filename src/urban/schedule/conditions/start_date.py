@@ -6,7 +6,7 @@ from imio.schedule.content.logic import StartDate
 from imio.schedule.interfaces import ICalculationDelay
 from zope.component import queryMultiAdapter
 
-from parts.omelette.Products.urban.interfaces import ICODT_BaseBuildLicence
+from Products.urban.interfaces import ICODT_BaseBuildLicence
 
 
 class AcknowledgmentLimitDate(StartDate):
