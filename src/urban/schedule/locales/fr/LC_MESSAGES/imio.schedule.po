@@ -29,3 +29,9 @@ msgstr "Date limite d'accusé de réception"
 #: ../conditions/configure.zcml:45
 msgid "urban.schedule.start_date.opinion_fd_limit_fd"
 msgstr "Date limite d'avis du FD"
+
+msgid "urban.schedule.start_date.amended_plans_limit_date"
+msgstr "Intention de plans modifiés: date ultime OU date réception + 180j"
+
+msgid "urban.schedule.condition.has_amended_plans"
+msgstr "Intention de dépôt de plans modifiés déposée"
