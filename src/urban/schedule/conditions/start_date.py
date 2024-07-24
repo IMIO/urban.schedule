@@ -6,6 +6,8 @@ from imio.schedule.content.logic import StartDate
 from imio.schedule.interfaces import ICalculationDelay
 from zope.component import queryMultiAdapter
 
+from Products.urban.interfaces import ICODT_BaseBuildLicence
+
 
 class AcknowledgmentLimitDate(StartDate):
     """
@@ -96,7 +98,7 @@ class AmendedPlansLimitDate(StartDate):
                 receipt_date = event.getReceiptDate()
                 if receipt_date:
                     limit_date = receipt_date + 180
-                    
+
         return limit_date
 
 
@@ -113,3 +115,17 @@ class FDOpinionLimitDate(StartDate):
             limit_date = date and date + delay or None
 
         return limit_date
+
+
+class PloneMeetingCollegeDecidedDate(StartDate):
+    def start_date(self):
+        licence = self.task_container
+        if ICODT_BaseBuildLicence.providedBy(licence):
+            return licence.get_last_college_date()
+
+
+class PloneMeetingCouncilDecidedDate(StartDate):
+    def start_date(self):
+        licence = self.task_container
+        if ICODT_BaseBuildLicence.providedBy(licence):
+            return licence.get_last_council_date()
