@@ -1,10 +1,6 @@
 # -*- coding: utf-8 -*-
 from Products.urban.interfaces import IIntentionToSubmitAmendedPlans
 from imio.schedule.content.condition import CreationCondition
-from plone import api
-from zope.component import getMultiAdapter
-from Products.urban.interfaces import ISimpleCollegeEvent
-
 from Products.urban.interfaces import ICODT_BaseBuildLicence
 
 
