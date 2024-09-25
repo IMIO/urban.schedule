@@ -41,3 +41,9 @@ msgstr "Date de décision du Collège communal"
 
 msgid "urban.schedule.start_date.council_decided"
 msgstr "Date de decision du Conseil communal"
+
+msgid "urban.schedule.start_date.amended_plans_limit_date"
+msgstr "Intention de plans modifiés: date ultime OU date réception + 180j"
+
+msgid "urban.schedule.condition.has_amended_plans"
+msgstr "Intention de dépôt de plans modifiés déposée"

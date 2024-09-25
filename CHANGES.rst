@@ -8,6 +8,24 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.0a4 (2024-06-27)
+--------------------
+
+New features:
+
+
+- Add start_date and conditional adapter for amended plans
+  [daggelpop]
+  Add task config for amended plans
+  [daggelpop]
+  Add config for `recepisse-de-plans-modificatifs` event
+  [daggelpop]
+  Adapt `AcknowledgmentLimitDate` for `IntentionToSubmitAmendedPlans`
+  [daggelpop]
+  Change opinion FD delay for codt 2024 change
+  [jchandelle] (URB-3005)
+
+
 1.0.0a3 (2024-03-30)
 --------------------
 
