@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.0a5 (2024-10-01)
+--------------------
+
+Bug fixes:
+
+
+- Add amended plans translations
+  [daggelpop] (URB-3005)
+
+
 1.0.0a4 (2024-06-27)
 --------------------
 

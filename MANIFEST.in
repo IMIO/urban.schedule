@@ -10,3 +10,4 @@ exclude .mcli
 exclude Dockerfile
 exclude Makefile
 exclude cookiecutter.json
+include *.toml
