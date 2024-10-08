@@ -230,8 +230,8 @@
     "@type": "TaskConfig",
     "UID": "9cea6ad87cdd4d8ca0e03d499290ca3f",
     "activate_recurrency": true,
-    "additional_delay": null,
-    "additional_delay_type": null,
+    "additional_delay": "0",
+    "additional_delay_type": "absolute",
     "allow_discussion": false,
     "calculation_delay": [
         "schedule.calculation_default_delay"
