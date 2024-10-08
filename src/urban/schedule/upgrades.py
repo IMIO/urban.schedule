@@ -35,3 +35,16 @@ def update_fd_opinion(context):
     else:
         logger.info("nothing to upgrade")
     logger.info("upgrade done!")
+
+
+def update_reception_skip_existing(context):
+    logger.info("starting : Update reception tasks (skip existing)")
+    if "standard" in utils.get_configs():
+        utils.import_all_config(
+            base_json_path="./profiles/config/standard",
+            handle_existing_content=utils.ExistingContent.SKIP,
+            match_filename="reception.json",
+        )
+    else:
+        logger.info("nothing to upgrade")
+    logger.info("upgrade done!")
