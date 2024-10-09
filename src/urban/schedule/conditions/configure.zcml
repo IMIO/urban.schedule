@@ -33,6 +33,24 @@
       i18n:attributes="name"
       />
 
+    <adapter
+      factory=".creation.IsPloneMeetingCollegeDone"
+      provides="imio.schedule.interfaces.ICreationCondition"
+      for="Products.urban.interfaces.ICODT_BaseBuildLicence
+           imio.schedule.content.task_config.ITaskConfig"
+      name="urban.schedule.condition.is_college_done"
+      i18n:attributes="name"
+      />
+
+    <adapter
+      factory=".creation.IsPloneMeetingCouncilDone"
+      provides="imio.schedule.interfaces.ICreationCondition"
+      for="Products.urban.interfaces.ICODT_BaseBuildLicence
+           imio.schedule.content.task_config.ITaskConfig"
+      name="urban.schedule.condition.is_council_done"
+      i18n:attributes="name"
+      />
+
   <!-- start date -->
 
   <adapter
@@ -61,5 +79,23 @@
       name="urban.schedule.start_date.opinion_fd_limit_fd"
       i18n:attributes="name"
       />
+
+  <adapter
+    factory=".start_date.PloneMeetingCollegeDecidedDate"
+    provides="imio.schedule.interfaces.IStartDate"
+    for="Products.urban.interfaces.IGenericLicence
+        imio.schedule.content.task.IAutomatedTask"
+    name="urban.schedule.start_date.college_decided"
+    i18n:attributes="name"
+    />
+
+  <adapter
+    factory=".start_date.PloneMeetingCouncilDecidedDate"
+    provides="imio.schedule.interfaces.IStartDate"
+    for="Products.urban.interfaces.IGenericLicence
+        imio.schedule.content.task.IAutomatedTask"
+    name="urban.schedule.start_date.council_decided"
+    i18n:attributes="name"
+    />
 
 </configure>

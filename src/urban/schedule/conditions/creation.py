@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from Products.urban.interfaces import IIntentionToSubmitAmendedPlans
 from imio.schedule.content.condition import CreationCondition
+from Products.urban.interfaces import ICODT_BaseBuildLicence
 
 
 class IsCODT2024(CreationCondition):
@@ -26,3 +27,18 @@ class HasAmendedPlans(CreationCondition):
         licence = self.task_container
         event = licence.getLastEvent(IIntentionToSubmitAmendedPlans)
         return event is not None
+
+
+class IsPloneMeetingCollegeDone(CreationCondition):
+    def evaluate(self):
+        licence = self.task_container
+        if ICODT_BaseBuildLicence.providedBy(licence):
+            return True if licence.get_last_college_date() else False
+
+
+
+class IsPloneMeetingCouncilDone(CreationCondition):
+    def evaluate(self):
+        licence = self.task_container
+        if ICODT_BaseBuildLicence.providedBy(licence):
+            return True if licence.get_last_council_date() else False

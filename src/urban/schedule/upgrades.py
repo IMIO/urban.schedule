@@ -35,3 +35,20 @@ def update_fd_opinion(context):
     else:
         logger.info("nothing to upgrade")
     logger.info("upgrade done!")
+
+
+def import_roaddecree_schedule_config(context):
+    logger.info("starting : Import roaddecree tasks")
+    if "liege" in utils.get_configs():
+        utils.import_all_config(
+            base_json_path="./profiles/config/liege",
+            handle_existing_content=utils.ExistingContent.UPDATE,
+            match_filename="decision-notification.json",
+        )
+    else:
+        utils.import_all_config(
+            base_json_path="./profiles/standard/default",
+            handle_existing_content=utils.ExistingContent.UPDATE,
+            match_filename="decision-notification.json",
+        )
+    logger.info("upgrade done!")
