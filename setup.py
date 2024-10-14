@@ -15,7 +15,7 @@ long_description = "\n\n".join(
 
 setup(
     name="urban.schedule",
-    version="1.0.0a4.dev0",
+    version="1.0.0a6.dev0",
     description="Schedule configuration for Urban",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
