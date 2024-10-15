@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
-from datetime import timedelta
-
+from Products.urban.interfaces import ICODT_BaseBuildLicence
 from Products.urban.interfaces import IIntentionToSubmitAmendedPlans
+from datetime import timedelta
 from imio.schedule.content.logic import StartDate
 from imio.schedule.interfaces import ICalculationDelay
 from zope.component import queryMultiAdapter
-
-from Products.urban.interfaces import ICODT_BaseBuildLicence
 
 
 class AcknowledgmentLimitDate(StartDate):

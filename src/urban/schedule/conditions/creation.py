@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
+from Products.urban.interfaces import ICODT_BaseBuildLicence
 from Products.urban.interfaces import IIntentionToSubmitAmendedPlans
 from imio.schedule.content.condition import CreationCondition
-from Products.urban.interfaces import ICODT_BaseBuildLicence
 
 
 class IsCODT2024(CreationCondition):
