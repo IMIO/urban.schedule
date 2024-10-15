@@ -83,7 +83,7 @@
   <adapter
     factory=".start_date.PloneMeetingCollegeDecidedDate"
     provides="imio.schedule.interfaces.IStartDate"
-    for="Products.urban.interfaces.IGenericLicence
+    for="Products.urban.interfaces.ICODT_BaseBuildLicence
         imio.schedule.content.task.IAutomatedTask"
     name="urban.schedule.start_date.college_decided"
     i18n:attributes="name"
@@ -92,7 +92,7 @@
   <adapter
     factory=".start_date.PloneMeetingCouncilDecidedDate"
     provides="imio.schedule.interfaces.IStartDate"
-    for="Products.urban.interfaces.IGenericLicence
+    for="Products.urban.interfaces.ICODT_BaseBuildLicence
         imio.schedule.content.task.IAutomatedTask"
     name="urban.schedule.start_date.council_decided"
     i18n:attributes="name"

@@ -20,10 +20,7 @@ class AcknowledgmentLimitDate(StartDate):
         # XXX: executed 5 times at licence creation during test; why ?
         licence = self.task_container
         limit_date = None
-        if (
-            hasattr(licence, "getHasModifiedBlueprints")
-            and not licence.getHasModifiedBlueprints()
-        ):
+        if hasattr(licence, "getHasModifiedBlueprints") and not licence.getHasModifiedBlueprints():
             deposit = licence.getLastDeposit()
             date = deposit and deposit.getEventDate()
             delay = 20
@@ -71,11 +68,7 @@ class AcknowledgmentLimitDate(StartDate):
                 ICalculationDelay,
                 "urban.schedule.delay.annonced_delay",
             )
-            annonced_delay = (
-                annonced_delay
-                and annonced_delay.calculate_delay(with_modified_blueprints=False)
-                or 0
-            )
+            annonced_delay = annonced_delay and annonced_delay.calculate_delay(with_modified_blueprints=False) or 0
             limit_date = ack and ack.getEventDate() + annonced_delay
         return limit_date
 
@@ -120,12 +113,10 @@ class FDOpinionLimitDate(StartDate):
 class PloneMeetingCollegeDecidedDate(StartDate):
     def start_date(self):
         licence = self.task_container
-        if ICODT_BaseBuildLicence.providedBy(licence):
-            return licence.get_last_college_date()
+        return licence.get_last_college_date()
 
 
 class PloneMeetingCouncilDecidedDate(StartDate):
     def start_date(self):
         licence = self.task_container
-        if ICODT_BaseBuildLicence.providedBy(licence):
-            return licence.get_last_council_date()
+        return licence.get_last_council_date()

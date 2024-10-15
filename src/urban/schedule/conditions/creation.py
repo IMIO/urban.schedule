@@ -32,13 +32,10 @@ class HasAmendedPlans(CreationCondition):
 class IsPloneMeetingCollegeDone(CreationCondition):
     def evaluate(self):
         licence = self.task_container
-        if ICODT_BaseBuildLicence.providedBy(licence):
-            return True if licence.get_last_college_date() else False
-
+        return True if licence.get_last_college_date() else False
 
 
 class IsPloneMeetingCouncilDone(CreationCondition):
     def evaluate(self):
         licence = self.task_container
-        if ICODT_BaseBuildLicence.providedBy(licence):
-            return True if licence.get_last_council_date() else False
+        return True if licence.get_last_council_date() else False
