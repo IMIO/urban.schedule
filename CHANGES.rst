@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.0a7 (2024-10-25)
+--------------------
+
+Bug fixes:
+
+
+- Update schedule config for reception (skip existing)
+  [daggelpop] (URB-3005)
+
+
 1.0.0a6 (2024-10-16)
 --------------------
 
