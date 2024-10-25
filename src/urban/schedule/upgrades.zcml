@@ -39,4 +39,13 @@
       profile="urban.schedule:default"
       />
 
+  <genericsetup:upgradeStep
+    title="Import roaddecree schedule config for liege"
+    description=""
+    source="1004"
+    destination="1005"
+    handler="urban.schedule.upgrades.import_roaddecree_schedule_config"
+    profile="urban.schedule:default"
+    />
+
 </configure>
