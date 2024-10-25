@@ -31,11 +31,21 @@
       />
 
   <genericsetup:upgradeStep
+      title="Update schedule config for reception (skip existing)"
+      description=""
+      source="1003"
+      destination="1004"
+      handler="urban.schedule.upgrades.update_reception_skip_existing"
+      profile="urban.schedule:default"
+      />
+
+  <genericsetup:upgradeStep
     title="Import roaddecree schedule config for liege"
     description=""
-    source="1003"
-    destination="1004"
+    source="1004"
+    destination="1005"
     handler="urban.schedule.upgrades.import_roaddecree_schedule_config"
     profile="urban.schedule:default"
     />
+
 </configure>
