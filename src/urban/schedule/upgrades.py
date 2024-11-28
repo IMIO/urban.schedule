@@ -59,5 +59,9 @@ def import_roaddecree_schedule_config(context):
             match_filename="decision-notification.json",
         )
     else:
-        logger.info("nothing to upgrade")
+        utils.import_all_config(
+            base_json_path="./profiles/standard/default",
+            handle_existing_content=utils.ExistingContent.UPDATE,
+            match_filename="decision-notification.json",
+        )
     logger.info("upgrade done!")
