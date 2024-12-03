@@ -8,6 +8,22 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.0a8 (2024-12-03)
+--------------------
+
+New features:
+
+
+- Add two new creation conditions `IsPloneMeetingCollegeDone` and `IsPloneMeetingCouncilDone`.
+  [aduchene]
+  Add two new start dates `PloneMeetingCollegeDecidedDate` and `PloneMeetingCouncilDecidedDate`.
+  [aduchene]
+  Add roaddecree tasks for liege.
+  [aduchene] (URB-3150)
+- Add roaddecree tasks for classic.
+  [aduchene] (URB-3151)
+
+
 1.0.0a7 (2024-10-25)
 --------------------
 
