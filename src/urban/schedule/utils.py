@@ -140,6 +140,8 @@ def import_all_config(
         for file in files:
             if match_filename is not None and file != match_filename:
                 continue
+            if not file.endswith(".json"):
+                continue
             json_path = os.path.join(root, file)
             licence_type = root.split("/")[-1]
             context_plone = os.path.normpath(
