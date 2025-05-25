@@ -51,6 +51,33 @@
       i18n:attributes="name"
       />
 
+    <adapter
+      for="Products.urban.interfaces.IBaseAllBuildLicence
+              imio.schedule.content.task_config.ITaskConfig"
+      provides="imio.schedule.interfaces.ICreationCondition"
+      factory=".creation.DepositDateIsPast20Days"
+      name="urban.schedule.condition.deposit_past_20days"
+      i18n:attributes="name"
+      />
+
+    <adapter
+      for="Products.urban.interfaces.IBaseAllBuildLicence
+           imio.schedule.content.task_config.ITaskConfig"
+      provides="imio.schedule.interfaces.ICreationCondition"
+      factory=".creation.DepositDateIsUnder20Days"
+      name="urban.schedule.condition.deposit_under_20days"
+      i18n:attributes="name"
+     />
+
+    <adapter
+      for="Products.urban.interfaces.IBaseAllBuildLicence
+           imio.schedule.content.task_config.ITaskConfig"
+      provides="imio.schedule.interfaces.ICreationCondition"
+      factory=".creation.DepositNumberMatch"
+      name="urban.schedule.condition.deposit_number_match"
+      i18n:attributes="name"
+     />
+
   <!-- start date -->
 
   <adapter
