@@ -125,4 +125,15 @@
     i18n:attributes="name"
     />
 
+  <!-- end conditions -->
+
+  <adapter
+      factory=".ending.IsSuspended"
+      provides="imio.schedule.interfaces.IEndCondition"
+      for="Products.urban.interfaces.ICODT_BaseBuildLicence
+           imio.schedule.content.task.IAutomatedTask"
+      name="urban.schedule.condition.is_suspended_ending"
+      i18n:attributes="name"
+      />
+
 </configure>
