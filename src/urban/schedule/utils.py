@@ -88,6 +88,8 @@ def import_json_config(
     :type json_path: String
     :param context: Path to or object of the context where the json will be imported
     :type context: String or plone object
+    :param handle_existing_content: Value dictate what to do if content already exist
+    :type handle_existing_content: urban.schedule.utils.ExistingContent
     :param update_keys: List of key to update if ExistingContent.UPDATE is selected to handle_existing_content
     :type update_keys: List of string
     :raises ValueError: Raise if the json doesn't exist
@@ -144,11 +146,14 @@ def import_all_config(
     :type base_context_path: String or plone object, optional
     :param config_type: config folder where to import, defaults to "schedule"
     :type config_type: String, optional
+    :param handle_existing_content: Value dictate what to do if content already exist
+    :type handle_existing_content: urban.schedule.utils.ExistingContent
     :param match_filename: a filename that will be use to restrict the imported configs,
                            defaults to "None"
     :type match_filename: String, optional
     :param update_keys: List of key to update if ExistingContent.UPDATE is selected to handle_existing_content
     :type update_keys: List of string
+    :raises ValueError: Raise if the json doesn't exist
     """
     directory_path = os.path.dirname(os.path.realpath(__file__))
 
