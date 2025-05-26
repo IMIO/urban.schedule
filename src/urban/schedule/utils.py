@@ -134,7 +134,7 @@ def import_all_config(
     config_type="schedule",
     handle_existing_content=ExistingContent.SKIP,
     match_filename=None,
-    update_keys=None
+    update_keys=None,
 ):
     """
     Function used to import all json inside a folder
@@ -185,5 +185,5 @@ def import_all_config(
                 json_path=json_path,
                 context=context_plone,
                 handle_existing_content=handle_existing_content,
-                update_keys=update_keys
+                update_keys=update_keys,
             )
