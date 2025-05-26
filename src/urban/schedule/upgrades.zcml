@@ -48,4 +48,13 @@
     profile="urban.schedule:default"
     />
 
+  <genericsetup:upgradeStep
+      title="Update schedule config for reception"
+      description=""
+      source="1005"
+      destination="1006"
+      handler="urban.schedule.upgrades.update_1005_reception"
+      profile="urban.schedule:default"
+      />
+
 </configure>

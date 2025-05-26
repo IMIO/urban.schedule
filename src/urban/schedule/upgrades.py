@@ -49,7 +49,7 @@ def update_reception_skip_existing(context):
         logger.info("nothing to upgrade")
     logger.info("upgrade done!")
 
-          
+
 def import_roaddecree_schedule_config(context):
     logger.info("starting : Import roaddecree tasks")
     if "liege" in utils.get_configs():
@@ -63,5 +63,30 @@ def import_roaddecree_schedule_config(context):
             base_json_path="./profiles/standard/default",
             handle_existing_content=utils.ExistingContent.UPDATE,
             match_filename="decision-notification.json",
+        )
+    logger.info("upgrade done!")
+
+
+def update_1005_reception(context):
+    logger.info("starting : Update reception specific fields")
+    keys = [
+        "end_conditions",
+        "ending_states",
+        "recurrence_conditions",
+        "recurrence_states",
+    ]
+    if "liege" in utils.get_configs():
+        utils.import_all_config(
+            base_json_path="./profiles/config/liege",
+            handle_existing_content=utils.ExistingContent.UPDATE,
+            match_filename="reception.json",
+            update_keys=keys,
+        )
+    else:
+        utils.import_all_config(
+            base_json_path="./profiles/config/standard",
+            handle_existing_content=utils.ExistingContent.UPDATE,
+            match_filename="reception.json",
+            update_keys=keys,
         )
     logger.info("upgrade done!")
