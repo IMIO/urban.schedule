@@ -60,8 +60,26 @@ def fix_all_ids(data):
     return new_data
 
 
+def handle_update_keys(data, handle_existing_content, update_keys=None):
+    if handle_existing_content is not ExistingContent.UPDATE:
+        return data
+    if update_keys is None:
+        return data
+    default_keep_keys = ["@id", "@type", "parent", "@relative_path", "UID", "id"]
+    all_keep_keys = default_keep_keys + update_keys
+    output_data = []
+    for item in data:
+        output_item = {}
+        for key in all_keep_keys:
+            if key not in item:
+                continue
+            output_item[key] = item[key]
+        output_data.append(output_item)
+    return output_data
+
+
 def import_json_config(
-    json_path, context, handle_existing_content=ExistingContent.SKIP
+    json_path, context, handle_existing_content=ExistingContent.SKIP, update_keys=None
 ):
     """
     This function is used to import a json file (exported with c.exportimport)
@@ -70,6 +88,10 @@ def import_json_config(
     :type json_path: String
     :param context: Path to or object of the context where the json will be imported
     :type context: String or plone object
+    :param handle_existing_content: Value dictate what to do if content already exist
+    :type handle_existing_content: urban.schedule.utils.ExistingContent
+    :param update_keys: List of key to update if ExistingContent.UPDATE is selected to handle_existing_content
+    :type update_keys: List of string
     :raises ValueError: Raise if the json doesn't exist
     """
     if not os.path.isfile(json_path):
@@ -99,6 +121,7 @@ def import_json_config(
     data = remove_uid(data)
     data = remove_none(data)
     data = fix_all_ids(data)
+    data = handle_update_keys(data, handle_existing_content, update_keys)
 
     import_content.start()
     import_content.do_import(data)
@@ -111,6 +134,7 @@ def import_all_config(
     config_type="schedule",
     handle_existing_content=ExistingContent.SKIP,
     match_filename=None,
+    update_keys=None,
 ):
     """
     Function used to import all json inside a folder
@@ -122,9 +146,14 @@ def import_all_config(
     :type base_context_path: String or plone object, optional
     :param config_type: config folder where to import, defaults to "schedule"
     :type config_type: String, optional
+    :param handle_existing_content: Value dictate what to do if content already exist
+    :type handle_existing_content: urban.schedule.utils.ExistingContent
     :param match_filename: a filename that will be use to restrict the imported configs,
                            defaults to "None"
     :type match_filename: String, optional
+    :param update_keys: List of key to update if ExistingContent.UPDATE is selected to handle_existing_content
+    :type update_keys: List of string
+    :raises ValueError: Raise if the json doesn't exist
     """
     directory_path = os.path.dirname(os.path.realpath(__file__))
 
@@ -156,4 +185,5 @@ def import_all_config(
                 json_path=json_path,
                 context=context_plone,
                 handle_existing_content=handle_existing_content,
+                update_keys=update_keys,
             )
