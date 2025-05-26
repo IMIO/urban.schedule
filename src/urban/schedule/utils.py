@@ -61,7 +61,7 @@ def fix_all_ids(data):
 
 
 def handle_update_keys(data, handle_existing_content, update_keys=None):
-    if handle_existing_content != 2:
+    if handle_existing_content is not ExistingContent.UPDATE:
         return data
     if update_keys is None:
         return data
@@ -121,7 +121,7 @@ def import_json_config(
     data = remove_uid(data)
     data = remove_none(data)
     data = fix_all_ids(data)
-    data = handle_update_keys(data, handle_existing_content.value, update_keys)
+    data = handle_update_keys(data, handle_existing_content, update_keys)
 
     import_content.start()
     import_content.do_import(data)
