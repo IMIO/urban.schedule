@@ -60,7 +60,7 @@ def import_roaddecree_schedule_config(context):
         )
     else:
         utils.import_all_config(
-            base_json_path="./profiles/standard/default",
+            base_json_path="./profiles/config/standard",
             handle_existing_content=utils.ExistingContent.UPDATE,
             match_filename="decision-notification.json",
         )
