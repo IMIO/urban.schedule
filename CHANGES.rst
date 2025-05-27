@@ -8,6 +8,27 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.0 (2025-05-27)
+------------------
+
+New features:
+
+
+- Add creation conditions `deposit_past_20days`, `deposit_under_20days` and `deposit_number_match`.
+  Add ending condition `is_suspended_ending`.
+  Update recurrence conditions for amended plans.
+  [mpeeters] (URB-3154)
+- Add possiblity to specify key to update when updating config
+  [jchandelle] (URB-3331)
+
+
+Internal:
+
+
+- Do not import file that are not JSON
+  [mpeeters] (URB-3154)
+
+
 1.0.0a8 (2024-12-03)
 --------------------
 
