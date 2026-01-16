@@ -54,15 +54,13 @@ def import_roaddecree_schedule_config(context):
     logger.info("starting : Import roaddecree tasks")
     if "liege" in utils.get_configs():
         utils.import_all_config(
-            base_json_path="./profiles/config/liege",
-            handle_existing_content=utils.ExistingContent.UPDATE,
-            match_filename="decision-notification.json",
+            base_json_path="./profiles/config/liege/roaddecree",
+            handle_existing_content=utils.ExistingContent.SKIP,
         )
     else:
         utils.import_all_config(
-            base_json_path="./profiles/config/standard",
-            handle_existing_content=utils.ExistingContent.UPDATE,
-            match_filename="decision-notification.json",
+            base_json_path="./profiles/config/standard/roaddecree",
+            handle_existing_content=utils.ExistingContent.SKIP,
         )
     logger.info("upgrade done!")
 

@@ -78,6 +78,18 @@ def handle_update_keys(data, handle_existing_content, update_keys=None):
     return output_data
 
 
+def ordering_content(json_path, context):
+    ordering_path = json_path.replace(".json", "_ordering.json")
+    if not os.path.isfile(ordering_path):
+        return
+
+    with open(ordering_path, "r") as f:
+        data = json.load(f)
+
+    ordering_content = context.unrestrictedTraverse("@@import_urban_config_ordering")
+    ordering_content.import_ordering(data)
+
+
 def import_json_config(
     json_path, context, handle_existing_content=ExistingContent.SKIP, update_keys=None
 ):
@@ -105,18 +117,17 @@ def import_json_config(
     if isinstance(context, str):
         context = portal.restrictedTraverse(context)
 
-    request = getattr(context, "REQUEST", None)
-
-    if request is None:
-        request = portal.REQUEST
-
-    import_content = ImportContent(context, request)
+    import_content = context.unrestrictedTraverse("@@import_urban_config")
 
     import_content.import_to_current_folder = False
     import_content.handle_existing_content = handle_existing_content.value
     import_content.limit = None
     import_content.commit = None
     import_content.import_old_revisions = False
+    import_content.import_to_current_lic_config_folder = False
+    import_content.import_in_same_instance = False
+    import_content.fix_parent_path = False
+    import_content.handle_missing_parent = 0
 
     data = remove_uid(data)
     data = remove_none(data)
@@ -127,6 +138,7 @@ def import_json_config(
     import_content.do_import(data)
     import_content.finish()
 
+    ordering_content(json_path, context)
 
 def import_all_config(
     base_json_path="./profiles/config",
@@ -135,6 +147,7 @@ def import_all_config(
     handle_existing_content=ExistingContent.SKIP,
     match_filename=None,
     update_keys=None,
+    blacklist=[]
 ):
     """
     Function used to import all json inside a folder
@@ -169,7 +182,9 @@ def import_all_config(
         for file in files:
             if match_filename is not None and file != match_filename:
                 continue
-            if not file.endswith(".json"):
+            if (not file.endswith(".json")) or file.endswith("_ordering.json"):
+                continue
+            if file in blacklist:
                 continue
             json_path = os.path.join(root, file)
             licence_type = root.split("/")[-1]

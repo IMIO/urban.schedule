@@ -1,0 +1,218 @@
+[{
+    "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/incomplet", 
+    "@relative_path": "/portal_urban/roaddecree/schedule/incomplet", 
+    "@type": "MacroTaskConfig", 
+    "UID": "8af56eb159014cde8afc21a9d7785db2", 
+    "activate_recurrency": false, 
+    "additional_delay": "0", 
+    "additional_delay_tal": false, 
+    "additional_delay_type": null, 
+    "allow_discussion": false, 
+    "calculation_delay": null, 
+    "created": "2023-05-11T08:18:21+00:00", 
+    "creation_conditions": [
+        {
+            "condition": "urban.schedule.condition.incomplete_first_time", 
+            "display_status": true
+        }
+    ], 
+    "creation_state": [
+        "incomplete"
+    ], 
+    "default_assigned_group": "urban_editors", 
+    "default_assigned_user": "urban.assign_folder_manager", 
+    "description": "", 
+    "enabled": true, 
+    "end_conditions": null, 
+    "ending_states": [
+        "deposit"
+    ], 
+    "freeze_conditions": null, 
+    "freeze_states": null, 
+    "id": "incomplet", 
+    "is_folderish": true, 
+    "layout": "view", 
+    "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+    "lock": {}, 
+    "marker_interfaces": null, 
+    "modified": "2023-08-24T19:36:48+00:00", 
+    "parent": {
+        "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule", 
+        "@type": "ScheduleConfig", 
+        "UID": "d62851048b5d4076a5724d715601f378", 
+        "description": "", 
+        "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+        "review_state": "private", 
+        "title": "Configuration d'\u00e9ch\u00e9ancier D\u00e9cret Voirie"
+    }, 
+    "recurrence_conditions": null, 
+    "recurrence_states": null, 
+    "review_state": "private", 
+    "round_to_day": "0", 
+    "start_conditions": null, 
+    "start_date": "schedule.start_date.subtask_highest_due_date", 
+    "starting_states": [
+        "incomplete"
+    ], 
+    "thaw_conditions": null, 
+    "thaw_states": null, 
+    "title": "Incomplet", 
+    "version": "current", 
+    "warning_delay": null, 
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null, 
+                "actor": "admin", 
+                "comments": "", 
+                "review_state": "private", 
+                "time": "2026-01-13T13:17:15+00:00"
+            }
+        ]
+    }
+},{
+    "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/incomplet/attente_complements", 
+    "@relative_path": "/portal_urban/roaddecree/schedule/incomplet/attente_complements", 
+    "@type": "TaskConfig", 
+    "UID": "480d89af5b48439486172eac0e795e35", 
+    "activate_recurrency": false, 
+    "additional_delay": 180, 
+    "additional_delay_tal": false, 
+    "additional_delay_type": null, 
+    "allow_discussion": false, 
+    "calculation_delay": null, 
+    "created": "2023-05-11T08:18:21+00:00", 
+    "creation_conditions": null, 
+    "creation_state": [
+        "incomplete"
+    ], 
+    "default_assigned_group": "urban_editors", 
+    "default_assigned_user": "urban.assign_folder_manager", 
+    "description": "", 
+    "enabled": true, 
+    "end_conditions": [
+        {
+            "condition": "urban.schedule.condition.complements_received", 
+            "display_status": true
+        }
+    ], 
+    "ending_states": [
+        "deposit"
+    ], 
+    "freeze_conditions": null, 
+    "freeze_states": null, 
+    "id": "attente_complements", 
+    "is_folderish": true, 
+    "layout": "view", 
+    "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+    "lock": {}, 
+    "marker_interfaces": null, 
+    "modified": "2023-08-24T19:36:48+00:00", 
+    "parent": {
+        "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/incomplet", 
+        "@type": "MacroTaskConfig", 
+        "UID": "8af56eb159014cde8afc21a9d7785db2", 
+        "description": "", 
+        "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+        "review_state": "private", 
+        "title": "Incomplet"
+    }, 
+    "recurrence_conditions": null, 
+    "recurrence_states": null, 
+    "review_state": "private", 
+    "round_to_day": "0", 
+    "start_conditions": [
+        {
+            "condition": "urban.schedule.condition.complements_asked", 
+            "display_status": true
+        }
+    ], 
+    "start_date": "urban.schedule.start_date.ask_complements_date", 
+    "starting_states": null, 
+    "thaw_conditions": null, 
+    "thaw_states": null, 
+    "title": "En attente de compl\u00e9ments", 
+    "version": "current", 
+    "warning_delay": null, 
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null, 
+                "actor": "admin", 
+                "comments": "", 
+                "review_state": "private", 
+                "time": "2026-01-13T13:17:15+00:00"
+            }
+        ]
+    }
+},{
+    "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/incomplet/demande_complements", 
+    "@relative_path": "/portal_urban/roaddecree/schedule/incomplet/demande_complements", 
+    "@type": "TaskConfig", 
+    "UID": "7ac01ef11d9b40c1989e346377218e7c", 
+    "activate_recurrency": false, 
+    "additional_delay": 20, 
+    "additional_delay_tal": false, 
+    "additional_delay_type": null, 
+    "allow_discussion": false, 
+    "calculation_delay": null, 
+    "created": "2023-05-11T08:18:21+00:00", 
+    "creation_conditions": null, 
+    "creation_state": [
+        "incomplete"
+    ], 
+    "default_assigned_group": "urban_editors", 
+    "default_assigned_user": "urban.assign_folder_manager", 
+    "description": "", 
+    "enabled": true, 
+    "end_conditions": [
+        {
+            "condition": "urban.schedule.condition.complements_asked", 
+            "display_status": true
+        }
+    ], 
+    "ending_states": null, 
+    "freeze_conditions": null, 
+    "freeze_states": null, 
+    "id": "demande_complements", 
+    "is_folderish": true, 
+    "layout": "view", 
+    "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+    "lock": {}, 
+    "marker_interfaces": null, 
+    "modified": "2023-08-24T19:36:48+00:00", 
+    "parent": {
+        "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/incomplet", 
+        "@type": "MacroTaskConfig", 
+        "UID": "8af56eb159014cde8afc21a9d7785db2", 
+        "description": "", 
+        "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+        "review_state": "private", 
+        "title": "Incomplet"
+    }, 
+    "recurrence_conditions": null, 
+    "recurrence_states": null, 
+    "review_state": "private", 
+    "round_to_day": "0", 
+    "start_conditions": null, 
+    "start_date": "urban.schedule.start_date.deposit_date", 
+    "starting_states": [
+        "incomplete"
+    ], 
+    "thaw_conditions": null, 
+    "thaw_states": null, 
+    "title": "Demander des compl\u00e9ments", 
+    "version": "current", 
+    "warning_delay": null, 
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null, 
+                "actor": "admin", 
+                "comments": "", 
+                "review_state": "private", 
+                "time": "2026-01-13T13:17:15+00:00"
+            }
+        ]
+    }
+}]

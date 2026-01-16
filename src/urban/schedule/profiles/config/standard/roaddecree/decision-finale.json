@@ -1,0 +1,153 @@
+[{
+    "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/decision-finale", 
+    "@relative_path": "/portal_urban/roaddecree/schedule/decision-finale", 
+    "@type": "MacroTaskConfig", 
+    "UID": "e28105d8cd1f4f5cbdc6d237719c1515", 
+    "activate_recurrency": false, 
+    "additional_delay": null, 
+    "additional_delay_tal": false, 
+    "additional_delay_type": "absolute", 
+    "allow_discussion": false, 
+    "calculation_delay": [
+        "urban.schedule.delay.annonced_delay"
+    ], 
+    "created": "2023-05-11T08:18:24+00:00", 
+    "creation_conditions": [
+        {
+            "condition": "urban.schedule.condition.acknowledgment_done", 
+            "display_status": true
+        }
+    ], 
+    "creation_state": [
+        "complete"
+    ], 
+    "default_assigned_group": "urban_editors", 
+    "default_assigned_user": "urban.assign_folder_manager", 
+    "description": "", 
+    "enabled": true, 
+    "end_conditions": [
+        {
+            "condition": "urban.schedule.condition.decision_notified", 
+            "display_status": true
+        }
+    ], 
+    "ending_states": [
+        "accepted", 
+        "refused"
+    ], 
+    "freeze_conditions": null, 
+    "freeze_states": [], 
+    "id": "decision-finale", 
+    "is_folderish": true, 
+    "layout": "view", 
+    "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+    "lock": {}, 
+    "marker_interfaces": [], 
+    "modified": "2023-10-05T07:34:47+00:00", 
+    "parent": {
+        "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule", 
+        "@type": "ScheduleConfig", 
+        "UID": "d62851048b5d4076a5724d715601f378", 
+        "description": "", 
+        "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+        "review_state": "private", 
+        "title": "Configuration d'\u00e9ch\u00e9ancier D\u00e9cret Voirie"
+    }, 
+    "recurrence_conditions": null, 
+    "recurrence_states": [], 
+    "review_state": "private", 
+    "round_to_day": "0", 
+    "start_conditions": null, 
+    "start_date": "urban.schedule.start_date.acknowledgment_date", 
+    "starting_states": [
+        "complete"
+    ], 
+    "thaw_conditions": null, 
+    "thaw_states": [], 
+    "title": "D\u00e9cision finale \u00e0 notifier", 
+    "version": "current", 
+    "warning_delay": null, 
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null, 
+                "actor": "admin", 
+                "comments": "", 
+                "review_state": "private", 
+                "time": "2026-01-13T12:33:33+00:00"
+            }
+        ]
+    }
+},{
+    "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/decision-finale/rediger-proposition-decision", 
+    "@relative_path": "/portal_urban/roaddecree/schedule/decision-finale/rediger-proposition-decision", 
+    "@type": "TaskConfig", 
+    "UID": "69294f8fde1946ebb94846e765b50666", 
+    "activate_recurrency": false, 
+    "additional_delay": -7, 
+    "additional_delay_tal": false, 
+    "additional_delay_type": "absolute", 
+    "allow_discussion": false, 
+    "calculation_delay": [
+        "urban.schedule.delay.annonced_delay"
+    ], 
+    "created": "2023-05-11T08:18:24+00:00", 
+    "creation_conditions": null, 
+    "creation_state": [
+        "complete"
+    ], 
+    "default_assigned_group": "urban_editors", 
+    "default_assigned_user": "urban.assign_folder_manager", 
+    "description": "", 
+    "enabled": true, 
+    "end_conditions": [
+        {
+            "condition": "urban.schedule.condition.decision_notified", 
+            "display_status": true
+        }
+    ], 
+    "ending_states": [], 
+    "freeze_conditions": null, 
+    "freeze_states": [], 
+    "id": "rediger-proposition-decision", 
+    "is_folderish": true, 
+    "layout": "view", 
+    "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+    "lock": {}, 
+    "marker_interfaces": [], 
+    "modified": "2023-10-05T07:36:17+00:00", 
+    "parent": {
+        "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/decision-finale", 
+        "@type": "MacroTaskConfig", 
+        "UID": "e28105d8cd1f4f5cbdc6d237719c1515", 
+        "description": "", 
+        "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+        "review_state": "private", 
+        "title": "D\u00e9cision finale \u00e0 notifier"
+    }, 
+    "recurrence_conditions": null, 
+    "recurrence_states": [], 
+    "review_state": "private", 
+    "round_to_day": "0", 
+    "start_conditions": null, 
+    "start_date": "urban.schedule.start_date.acknowledgment_date", 
+    "starting_states": [
+        "complete"
+    ], 
+    "thaw_conditions": null, 
+    "thaw_states": [], 
+    "title": "R\u00e9diger la d\u00e9cision", 
+    "version": "current", 
+    "warning_delay": null, 
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null, 
+                "actor": "admin", 
+                "comments": "", 
+                "review_state": "private", 
+                "time": "2026-01-13T12:33:33+00:00"
+            }
+        ]
+    }
+}]

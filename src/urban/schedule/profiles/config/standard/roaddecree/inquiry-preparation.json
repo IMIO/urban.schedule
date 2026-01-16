@@ -1,0 +1,80 @@
+[{
+    "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/inquiry-preparation", 
+    "@relative_path": "/portal_urban/roaddecree/schedule/inquiry-preparation", 
+    "@type": "TaskConfig", 
+    "UID": "61e05ea364154525afdd267f96e68077", 
+    "activate_recurrency": true, 
+    "additional_delay": "8", 
+    "additional_delay_tal": false, 
+    "additional_delay_type": "absolute", 
+    "allow_discussion": false, 
+    "calculation_delay": [], 
+    "created": "2023-05-11T08:18:23+00:00", 
+    "creation_conditions": null, 
+    "creation_state": [
+        "complete"
+    ], 
+    "default_assigned_group": null, 
+    "default_assigned_user": "urban.assign_folder_manager", 
+    "description": "", 
+    "enabled": true, 
+    "end_conditions": [
+        {
+            "condition": "urban.schedule.condition.inquiry_dates_defined", 
+            "display_status": true
+        }
+    ], 
+    "ending_states": [
+        "complete"
+    ], 
+    "freeze_conditions": null, 
+    "freeze_states": [], 
+    "id": "inquiry-preparation", 
+    "is_folderish": true, 
+    "layout": "view", 
+    "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+    "lock": {}, 
+    "marker_interfaces": [], 
+    "modified": "2026-01-13T13:15:04+00:00", 
+    "parent": {
+        "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule", 
+        "@type": "ScheduleConfig", 
+        "UID": "d62851048b5d4076a5724d715601f378", 
+        "description": "", 
+        "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+        "review_state": "private", 
+        "title": "Configuration d'\u00e9ch\u00e9ancier D\u00e9cret Voirie"
+    }, 
+    "recurrence_conditions": [
+        {
+            "condition": "urban.schedule.condition.will_have_inquiry", 
+            "display_status": true
+        }
+    ], 
+    "recurrence_states": [
+        "complete"
+    ], 
+    "review_state": "private", 
+    "round_to_day": "0", 
+    "start_conditions": null, 
+    "start_date": "urban.schedule.start_date.acknowledgment_date", 
+    "starting_states": [
+        "complete"
+    ], 
+    "thaw_conditions": null, 
+    "thaw_states": [], 
+    "title": "Pr\u00e9parer l'enqu\u00eate publique", 
+    "version": "current", 
+    "warning_delay": null, 
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null, 
+                "actor": "admin", 
+                "comments": "", 
+                "review_state": "private", 
+                "time": "2026-01-13T12:33:33+00:00"
+            }
+        ]
+    }
+}]
