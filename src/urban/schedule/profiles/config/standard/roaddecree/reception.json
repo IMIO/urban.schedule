@@ -1,0 +1,319 @@
+[{
+    "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/reception", 
+    "@relative_path": "/portal_urban/roaddecree/schedule/reception", 
+    "@type": "MacroTaskConfig", 
+    "UID": "204875b03f2e4b7fbdad28968f163673", 
+    "activate_recurrency": true, 
+    "additional_delay": "0", 
+    "additional_delay_tal": false, 
+    "additional_delay_type": "absolute", 
+    "allow_discussion": false, 
+    "calculation_delay": [], 
+    "created": "2017-05-31T13:04:48+00:00", 
+    "creation_conditions": null, 
+    "creation_state": [
+        "deposit"
+    ], 
+    "default_assigned_group": null, 
+    "default_assigned_user": "urban.assign_folder_manager", 
+    "description": "", 
+    "enabled": true, 
+    "end_conditions": null, 
+    "ending_states": [
+        "complete", 
+        "incomplete", 
+        "deposit"
+    ], 
+    "freeze_conditions": null, 
+    "freeze_states": [], 
+    "id": "reception", 
+    "is_folderish": true, 
+    "layout": "view", 
+    "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+    "lock": {}, 
+    "marker_interfaces": [], 
+    "modified": "2026-01-13T13:08:15+00:00", 
+    "parent": {
+        "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule", 
+        "@type": "ScheduleConfig", 
+        "UID": "d62851048b5d4076a5724d715601f378", 
+        "description": "", 
+        "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+        "review_state": "private", 
+        "title": "Configuration d'\u00e9ch\u00e9ancier D\u00e9cret Voirie"
+    }, 
+    "recurrence_conditions": null, 
+    "recurrence_states": [
+        "deposit"
+    ], 
+    "review_state": "private", 
+    "round_to_day": "0", 
+    "start_conditions": null, 
+    "start_date": "urban.schedule.start_date.deposit_date", 
+    "starting_states": [
+        "deposit"
+    ], 
+    "thaw_conditions": null, 
+    "thaw_states": [], 
+    "title": "R\u00e9ception du dossier", 
+    "version": "current", 
+    "warning_delay": null, 
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null, 
+                "actor": "admin", 
+                "comments": "", 
+                "review_state": "private", 
+                "time": "2026-01-13T12:34:29+00:00"
+            }
+        ]
+    }
+},{
+    "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/reception/check_completion", 
+    "@relative_path": "/portal_urban/roaddecree/schedule/reception/check_completion", 
+    "@type": "TaskConfig", 
+    "UID": "6b8140987b974e0a825d95a1c0fc689b", 
+    "activate_recurrency": true, 
+    "additional_delay": "0", 
+    "additional_delay_tal": false, 
+    "additional_delay_type": "absolute", 
+    "allow_discussion": false, 
+    "calculation_delay": [], 
+    "created": "2017-05-31T13:04:49+00:00", 
+    "creation_conditions": null, 
+    "creation_state": [
+        "deposit"
+    ], 
+    "default_assigned_group": null, 
+    "default_assigned_user": "urban.assign_folder_manager", 
+    "description": "", 
+    "enabled": true, 
+    "end_conditions": null, 
+    "ending_states": [
+        "retired", 
+        "complete", 
+        "inacceptable", 
+        "refused", 
+        "suspension", 
+        "accepted", 
+        "incomplete"
+    ], 
+    "freeze_conditions": null, 
+    "freeze_states": [], 
+    "id": "check_completion", 
+    "is_folderish": true, 
+    "layout": "view", 
+    "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+    "lock": {}, 
+    "marker_interfaces": [], 
+    "modified": "2026-01-13T13:45:33+00:00", 
+    "parent": {
+        "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/reception", 
+        "@type": "MacroTaskConfig", 
+        "UID": "204875b03f2e4b7fbdad28968f163673", 
+        "description": "", 
+        "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+        "review_state": "private", 
+        "title": "R\u00e9ception du dossier"
+    }, 
+    "recurrence_conditions": null, 
+    "recurrence_states": [
+        "deposit"
+    ], 
+    "review_state": "private", 
+    "round_to_day": "0", 
+    "start_conditions": [
+        {
+            "condition": "urban.schedule.condition.deposit_done", 
+            "display_status": true
+        }
+    ], 
+    "start_date": "urban.schedule.start_date.acknowledgment_limit_date", 
+    "starting_states": [
+        "deposit"
+    ], 
+    "thaw_conditions": null, 
+    "thaw_states": [], 
+    "title": "V\u00e9rifier la compl\u00e9tude", 
+    "version": "current", 
+    "warning_delay": null, 
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null, 
+                "actor": "admin", 
+                "comments": "", 
+                "review_state": "private", 
+                "time": "2026-01-13T12:34:28+00:00"
+            }
+        ]
+    }
+},{
+    "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/reception/deposit", 
+    "@relative_path": "/portal_urban/roaddecree/schedule/reception/deposit", 
+    "@type": "TaskConfig", 
+    "UID": "8560f22ae8814c43a68fd1d02f03f151", 
+    "activate_recurrency": false, 
+    "additional_delay": "5", 
+    "additional_delay_tal": false, 
+    "additional_delay_type": "absolute", 
+    "allow_discussion": false, 
+    "calculation_delay": [
+        "schedule.calculation_default_delay"
+    ], 
+    "created": "2017-05-31T13:04:48+00:00", 
+    "creation_conditions": null, 
+    "creation_state": [
+        "deposit"
+    ], 
+    "default_assigned_group": null, 
+    "default_assigned_user": "urban.assign_folder_manager", 
+    "description": "", 
+    "enabled": true, 
+    "end_conditions": [
+        {
+            "condition": "urban.schedule.condition.deposit_done", 
+            "display_status": true, 
+            "operator": "OR"
+        }
+    ], 
+    "ending_states": [], 
+    "freeze_conditions": null, 
+    "freeze_states": [], 
+    "id": "deposit", 
+    "is_folderish": true, 
+    "layout": "view", 
+    "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+    "lock": {}, 
+    "marker_interfaces": [], 
+    "modified": "2026-01-13T13:44:46+00:00", 
+    "parent": {
+        "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/reception", 
+        "@type": "MacroTaskConfig", 
+        "UID": "204875b03f2e4b7fbdad28968f163673", 
+        "description": "", 
+        "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+        "review_state": "private", 
+        "title": "R\u00e9ception du dossier"
+    }, 
+    "recurrence_conditions": null, 
+    "recurrence_states": [], 
+    "review_state": "private", 
+    "round_to_day": "0", 
+    "start_conditions": null, 
+    "start_date": "urban.schedule.start_date.creation_date", 
+    "starting_states": [
+        "deposit"
+    ], 
+    "thaw_conditions": null, 
+    "thaw_states": [], 
+    "title": "Renseigner la date de d\u00e9p\u00f4t", 
+    "version": "current", 
+    "warning_delay": null, 
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null, 
+                "actor": "admin", 
+                "comments": "", 
+                "review_state": "private", 
+                "time": "2026-01-13T12:34:28+00:00"
+            }
+        ]
+    }
+},{
+    "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/reception/send_acknoledgment", 
+    "@relative_path": "/portal_urban/roaddecree/schedule/reception/send_acknoledgment", 
+    "@type": "TaskConfig", 
+    "UID": "10d252eb34d24189a45e4a24c4e50c31", 
+    "activate_recurrency": true, 
+    "additional_delay": "0", 
+    "additional_delay_tal": false, 
+    "additional_delay_type": "absolute", 
+    "allow_discussion": false, 
+    "calculation_delay": [
+        "schedule.calculation_default_delay"
+    ], 
+    "created": "2017-05-31T13:04:49+00:00", 
+    "creation_conditions": null, 
+    "creation_state": [
+        "complete"
+    ], 
+    "default_assigned_group": "urban_editors", 
+    "default_assigned_user": "urban.assign_folder_manager", 
+    "description": "", 
+    "enabled": true, 
+    "end_conditions": [
+        {
+            "condition": "urban.schedule.condition.acknowledgment_done", 
+            "display_status": true, 
+            "operator": "OR"
+        }, 
+        {
+            "condition": "urban.schedule.condition.deposit_past_20days", 
+            "display_status": true, 
+            "operator": "OR"
+        }, 
+        {
+            "condition": "urban.schedule.condition.is_suspended_ending", 
+            "display_status": true
+        }
+    ], 
+    "ending_states": [], 
+    "freeze_conditions": null, 
+    "freeze_states": [], 
+    "id": "send_acknoledgment", 
+    "is_folderish": true, 
+    "layout": "view", 
+    "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+    "lock": {}, 
+    "marker_interfaces": [], 
+    "modified": "2025-06-01T17:55:54+00:00", 
+    "parent": {
+        "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/reception", 
+        "@type": "MacroTaskConfig", 
+        "UID": "204875b03f2e4b7fbdad28968f163673", 
+        "description": "", 
+        "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+        "review_state": "private", 
+        "title": "R\u00e9ception du dossier"
+    }, 
+    "recurrence_conditions": [
+        {
+            "condition": "urban.schedule.condition.deposit_number_match", 
+            "display_status": true
+        }
+    ], 
+    "recurrence_states": [
+        "complete"
+    ], 
+    "review_state": "private", 
+    "round_to_day": "0", 
+    "start_conditions": [
+        {
+            "condition": "urban.schedule.condition.deposit_done", 
+            "display_status": true
+        }
+    ], 
+    "start_date": "urban.schedule.start_date.acknowledgment_limit_date", 
+    "starting_states": [
+        "complete"
+    ], 
+    "thaw_conditions": null, 
+    "thaw_states": [], 
+    "title": "Envoyer l'accus\u00e9 de r\u00e9ception", 
+    "version": "current", 
+    "warning_delay": null, 
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null, 
+                "actor": "admin", 
+                "comments": "", 
+                "review_state": "private", 
+                "time": "2026-01-13T12:34:28+00:00"
+            }
+        ]
+    }
+}]

@@ -1,0 +1,87 @@
+[{
+    "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule/demande-avis-en-cours", 
+    "@relative_path": "/portal_urban/roaddecree/schedule/demande-avis-en-cours", 
+    "@type": "TaskConfig", 
+    "UID": "2c434fe759bb48809f22bd5b028dcd57", 
+    "activate_recurrency": true, 
+    "additional_delay": 30, 
+    "additional_delay_tal": false, 
+    "additional_delay_type": null, 
+    "allow_discussion": false, 
+    "calculation_delay": null, 
+    "created": "2023-05-11T08:18:23+00:00", 
+    "creation_conditions": [
+        {
+            "condition": "urban.schedule.condition.opinion_requests_in_progress", 
+            "display_status": true
+        }
+    ], 
+    "creation_state": [
+        "complete"
+    ], 
+    "default_assigned_group": "urban_editors", 
+    "default_assigned_user": "urban.assign_folder_manager", 
+    "description": "", 
+    "enabled": true, 
+    "end_conditions": [
+        {
+            "condition": "urban.schedule.condition.opinion_requests_done", 
+            "display_status": true, 
+            "operator": "AND"
+        }
+    ], 
+    "ending_states": null, 
+    "freeze_conditions": null, 
+    "freeze_states": null, 
+    "id": "demande-avis-en-cours", 
+    "is_folderish": true, 
+    "layout": "view", 
+    "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+    "lock": {}, 
+    "marker_interfaces": [
+        "Products.urban.schedule.interfaces.ISendOpinionRequestsTask"
+    ], 
+    "modified": "2023-08-24T19:36:51+00:00", 
+    "parent": {
+        "@id": "https://localhost:8080/Plone/portal_urban/roaddecree/schedule", 
+        "@type": "ScheduleConfig", 
+        "UID": "d62851048b5d4076a5724d715601f378", 
+        "description": "", 
+        "licence_url": "https://localhost:8080/Plone/portal_urban/roaddecree", 
+        "review_state": "private", 
+        "title": "Configuration d'\u00e9ch\u00e9ancier D\u00e9cret Voirie"
+    }, 
+    "recurrence_conditions": [
+        {
+            "condition": "urban.schedule.condition.opinion_requests_in_progress", 
+            "display_status": true, 
+            "operator": "AND"
+        }
+    ], 
+    "recurrence_states": [
+        "complete"
+    ], 
+    "review_state": "private", 
+    "round_to_day": "0", 
+    "start_conditions": null, 
+    "start_date": "urban.schedule.start_date.acknowledgment_date", 
+    "starting_states": [
+        "complete"
+    ], 
+    "thaw_conditions": null, 
+    "thaw_states": null, 
+    "title": "Avis en cours", 
+    "version": "current", 
+    "warning_delay": null, 
+    "workflow_history": {
+        "simple_publication_workflow": [
+            {
+                "action": null, 
+                "actor": "admin", 
+                "comments": "", 
+                "review_state": "private", 
+                "time": "2026-01-13T12:33:33+00:00"
+            }
+        ]
+    }
+}]
