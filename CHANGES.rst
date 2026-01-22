@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.1 (2026-01-22)
+------------------
+
+Bug fixes:
+
+
+- Add task config and fix upgrade step for roaddecree
+  [jchandelle] (URBBDC-3142)
+
+
 1.0.0 (2025-05-27)
 ------------------
 
