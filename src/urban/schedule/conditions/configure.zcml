@@ -125,6 +125,17 @@
     i18n:attributes="name"
     />
 
+  <!-- start conditions -->
+
+  <adapter
+      factory=".start.CessionEventCreated"
+      provides="imio.schedule.interfaces.IStartCondition"
+      for="Products.urban.interfaces.IGenericLicence
+           imio.schedule.content.task.IAutomatedTask"
+      name="urban.schedule.condition.cession_event_created"
+      i18n:attributes="name"
+      />
+
   <!-- end conditions -->
 
   <adapter
@@ -133,6 +144,15 @@
       for="Products.urban.interfaces.ICODT_BaseBuildLicence
            imio.schedule.content.task.IAutomatedTask"
       name="urban.schedule.condition.is_suspended_ending"
+      i18n:attributes="name"
+      />
+
+  <adapter
+      factory=".ending.CessionAcknowledgmentDone"
+      provides="imio.schedule.interfaces.IEndCondition"
+      for="Products.urban.interfaces.IGenericLicence
+           imio.schedule.content.task.IAutomatedTask"
+      name="urban.schedule.condition.cession_acknowledgment_done"
       i18n:attributes="name"
       />
 
