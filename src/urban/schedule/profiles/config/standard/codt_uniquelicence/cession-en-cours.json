@@ -1,9 +1,9 @@
 [
     {
-        "@id": "https://localhost:8080/Plone/portal_urban/envclassone/schedule/cession-en-cours",
-        "@relative_path": "/portal_urban/envclassone/schedule/cession-en-cours",
+        "@id": "https://localhost:8080/Plone/portal_urban/codt_uniquelicence/schedule/cession-en-cours",
+        "@relative_path": "/portal_urban/codt_uniquelicence/schedule/cession-en-cours",
         "@type": "TaskConfig",
-        "UID": "5d2d973cc400438f80a154388d139692",
+        "UID": "66e57c800091407899aff778ee09a51e",
         "activate_recurrency": false,
         "additional_delay": "0",
         "additional_delay_tal": false,
@@ -30,16 +30,16 @@
         "id": "cession-en-cours",
         "is_folderish": true,
         "layout": "view",
-        "licence_url": "https://localhost:8080/Plone/portal_urban/envclassone",
+        "licence_url": "https://localhost:8080/Plone/portal_urban/codt_uniquelicence",
         "lock": {},
         "marker_interfaces": [],
         "modified": "2026-09-08T00:00:00+00:00",
         "parent": {
-            "@id": "https://localhost:8080/Plone/portal_urban/envclassone/schedule",
+            "@id": "https://localhost:8080/Plone/portal_urban/codt_uniquelicence/schedule",
             "@type": "ScheduleConfig",
-            "UID": "27dd73f01d6b44deb3e47bbad44df02f",
+            "UID": "df0c4cfcdf5c44c9a9c2a582192463aa",
             "description": "",
-            "licence_url": "https://localhost:8080/Plone/portal_urban/envclassone",
+            "licence_url": "https://localhost:8080/Plone/portal_urban/codt_uniquelicence",
             "review_state": "private",
             "title": "Configuration d'échéancier"
         },
