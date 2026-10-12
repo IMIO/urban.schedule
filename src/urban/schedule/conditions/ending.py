@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from Products.urban.interfaces import ICessionEvent
+from Products.urban.interfaces import IAcknowledgmentOfTransfer
 from imio.schedule.content.condition import EndCondition
 from plone import api
 
@@ -14,9 +14,9 @@ class IsSuspended(EndCondition):
 
 
 class CessionAcknowledgmentDone(EndCondition):
-  
+    """Validate that the cession acknowledgment event is closed"""
 
     def evaluate(self):
         licence = self.task_container
-        event = licence.getLastEvent(ICessionEvent, state="closed")
+        event = licence.getLastEvent(IAcknowledgmentOfTransfer, state="closed")
         return event is not None
