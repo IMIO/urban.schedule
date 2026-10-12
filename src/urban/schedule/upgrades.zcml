@@ -57,4 +57,13 @@
       profile="urban.schedule:default"
       />
 
+  <genericsetup:upgradeStep
+      title="Import schedule config for cession"
+      description=""
+      source="1006"
+      destination="1007"
+      handler="urban.schedule.upgrades.import_cession_schedule_config"
+      profile="urban.schedule:default"
+      />
+
 </configure>
