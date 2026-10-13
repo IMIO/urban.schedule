@@ -14,7 +14,8 @@ class IsSuspended(EndCondition):
 
 
 class CessionAcknowledgmentDone(EndCondition):
-    """Validate that the cession acknowledgment event is closed"""
+    """Validate that the cession acknowledgment event
+    ('Prise de connaissance de la cession') is closed"""
 
     def evaluate(self):
         licence = self.task_container

@@ -4,6 +4,7 @@ from imio.schedule.content.condition import StartCondition
 
 
 class CessionEventCreated(StartCondition):
+    """Validate that a cession event has been created on the licence"""
 
     def evaluate(self):
         licence = self.task_container
