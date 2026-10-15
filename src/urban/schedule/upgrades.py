@@ -44,7 +44,7 @@ def update_reception_skip_existing(context):
             base_json_path="./profiles/config/standard",
             handle_existing_content=utils.ExistingContent.SKIP,
             match_filename="reception.json",
-         )
+        )
     else:
         logger.info("nothing to upgrade")
     logger.info("upgrade done!")
@@ -87,4 +87,17 @@ def update_1005_reception(context):
             match_filename="reception.json",
             update_keys=keys,
         )
+    logger.info("upgrade done!")
+
+
+def import_cession_schedule_config(context):
+    logger.info("starting : Import cession tasks")
+    if "standard" in utils.get_configs():
+        utils.import_all_config(
+            base_json_path="./profiles/config/standard",
+            handle_existing_content=utils.ExistingContent.SKIP,
+            match_filename="cession-en-cours.json",
+        )
+    else:
+        logger.info("nothing to upgrade")
     logger.info("upgrade done!")

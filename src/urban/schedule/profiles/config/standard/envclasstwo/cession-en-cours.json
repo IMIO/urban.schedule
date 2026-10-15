@@ -1,0 +1,75 @@
+[
+    {
+        "@id": "https://localhost:8080/Plone/portal_urban/envclasstwo/schedule/cession-en-cours",
+        "@relative_path": "/portal_urban/envclasstwo/schedule/cession-en-cours",
+        "@type": "TaskConfig",
+        "UID": "3437c1c2f8b84d99a1a4d149efcfd1f7",
+        "activate_recurrency": false,
+        "additional_delay": "0",
+        "additional_delay_tal": false,
+        "additional_delay_type": null,
+        "allow_discussion": false,
+        "calculation_delay": null,
+        "created": "2026-09-08T00:00:00+00:00",
+        "creation_conditions": null,
+        "creation_state": null,
+        "default_assigned_group": "urban_editors",
+        "default_assigned_user": "urban.assign_folder_manager",
+        "description": "",
+        "enabled": true,
+        "end_conditions": [
+            {
+                "condition": "urban.schedule.condition.cession_acknowledgment_done",
+                "display_status": true,
+                "operator": "AND"
+            }
+        ],
+        "ending_states": null,
+        "freeze_conditions": null,
+        "freeze_states": null,
+        "id": "cession-en-cours",
+        "is_folderish": true,
+        "layout": "view",
+        "licence_url": "https://localhost:8080/Plone/portal_urban/envclasstwo",
+        "lock": {},
+        "marker_interfaces": [],
+        "modified": "2026-09-08T00:00:00+00:00",
+        "parent": {
+            "@id": "https://localhost:8080/Plone/portal_urban/envclasstwo/schedule",
+            "@type": "ScheduleConfig",
+            "UID": "67554e40c40e44bf86fdde4aae77a7a6",
+            "description": "",
+            "licence_url": "https://localhost:8080/Plone/portal_urban/envclasstwo",
+            "review_state": "private",
+            "title": "Configuration d'échéancier"
+        },
+        "recurrence_conditions": null,
+        "recurrence_states": null,
+        "review_state": "private",
+        "round_to_day": "0",
+        "start_conditions": [
+            {
+                "condition": "urban.schedule.condition.cession_event_created",
+                "display_status": true
+            }
+        ],
+        "start_date": "urban.schedule.start_date.creation_date",
+        "starting_states": null,
+        "thaw_conditions": null,
+        "thaw_states": null,
+        "title": "Cession en cours",
+        "version": "current",
+        "warning_delay": null,
+        "workflow_history": {
+            "simple_publication_workflow": [
+                {
+                    "action": null,
+                    "actor": "admin",
+                    "comments": "",
+                    "review_state": "private",
+                    "time": "2026-09-08T00:00:00+00:00"
+                }
+            ]
+        }
+    }
+]
