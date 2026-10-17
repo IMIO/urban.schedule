@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.3 (2026-10-17)
+------------------
+
+New features:
+
+
+- Add start and end conditions for the cession task.
+  [WBoudabous] (URB-3636)
+
+
 1.0.2 (2026-01-22)
 ------------------
 
