@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from Products.urban.interfaces import IAcknowledgmentOfTransfer
+from Products.urban.interfaces import IReleaseOfSecurity
 from imio.schedule.content.condition import EndCondition
 from plone import api
 
@@ -20,4 +21,14 @@ class CessionAcknowledgmentDone(EndCondition):
     def evaluate(self):
         licence = self.task_container
         event = licence.getLastEvent(IAcknowledgmentOfTransfer, state="closed")
+        return event is not None
+
+
+class ReleaseOfSecurityReceived(EndCondition):
+    """Validate that a release of security event has been created on the licence
+    (ACTE_LIBERATION_SURETE_COMMUNE notification received)"""
+
+    def evaluate(self):
+        licence = self.task_container
+        event = licence.getLastEvent(IReleaseOfSecurity)
         return event is not None

@@ -136,6 +136,15 @@
       i18n:attributes="name"
       />
 
+  <adapter
+      factory=".start.ProvisionOfSecurityEventCreated"
+      provides="imio.schedule.interfaces.IStartCondition"
+      for="Products.urban.interfaces.IGenericLicence
+           imio.schedule.content.task.IAutomatedTask"
+      name="urban.schedule.condition.provision_of_security_event_created"
+      i18n:attributes="name"
+      />
+
   <!-- end conditions -->
 
   <adapter
@@ -153,6 +162,15 @@
       for="Products.urban.interfaces.IGenericLicence
            imio.schedule.content.task.IAutomatedTask"
       name="urban.schedule.condition.cession_acknowledgment_done"
+      i18n:attributes="name"
+      />
+
+  <adapter
+      factory=".ending.ReleaseOfSecurityReceived"
+      provides="imio.schedule.interfaces.IEndCondition"
+      for="Products.urban.interfaces.IGenericLicence
+           imio.schedule.content.task.IAutomatedTask"
+      name="urban.schedule.condition.release_of_security_received"
       i18n:attributes="name"
       />
 
