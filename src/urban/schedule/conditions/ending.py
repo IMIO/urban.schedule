@@ -30,5 +30,5 @@ class ReleaseOfSecurityReceived(EndCondition):
 
     def evaluate(self):
         licence = self.task_container
-        event = licence.getLastEvent(IReleaseOfSecurity)
+        event = licence.getLastEvent(IReleaseOfSecurity, state="closed")
         return event is not None
