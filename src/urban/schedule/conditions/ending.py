@@ -25,8 +25,8 @@ class CessionAcknowledgmentDone(EndCondition):
 
 
 class ReleaseOfSecurityReceived(EndCondition):
-    """Validate that a release of security event has been created on the licence
-    (ACTE_LIBERATION_SURETE_COMMUNE notification received)"""
+    """Validate that a release of security event has been created and closed
+    on the licence (ACTE_LIBERATION_SURETE_COMMUNE notification received)"""
 
     def evaluate(self):
         licence = self.task_container
