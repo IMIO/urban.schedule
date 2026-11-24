@@ -101,3 +101,16 @@ def import_cession_schedule_config(context):
     else:
         logger.info("nothing to upgrade")
     logger.info("upgrade done!")
+
+
+def import_provision_of_security_schedule_config(context):
+    logger.info("starting : Import provision of security tasks")
+    if "standard" in utils.get_configs():
+        utils.import_all_config(
+            base_json_path="./profiles/config/standard",
+            handle_existing_content=utils.ExistingContent.SKIP,
+            match_filename="constitution-surete-en-cours.json",
+        )
+    else:
+        logger.info("nothing to upgrade")
+    logger.info("upgrade done!")

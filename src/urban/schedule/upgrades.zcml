@@ -66,4 +66,13 @@
       profile="urban.schedule:default"
       />
 
+  <genericsetup:upgradeStep
+      title="Import schedule config for provision of security"
+      description=""
+      source="1007"
+      destination="1008"
+      handler="urban.schedule.upgrades.import_provision_of_security_schedule_config"
+      profile="urban.schedule:default"
+      />
+
 </configure>

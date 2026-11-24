@@ -34,6 +34,14 @@ msgstr "Clôturer l'évènement prise de connaissance de la cession"
 msgid "urban.schedule.condition.cession_event_created"
 msgstr "Créer l'évènement cession"
 
+#: ../conditions/configure.zcml
+msgid "urban.schedule.condition.provision_of_security_event_created"
+msgstr "Recevoir la notification de constitution de sûreté"
+
+#: ../conditions/configure.zcml
+msgid "urban.schedule.condition.release_of_security_received"
+msgstr "Recevoir la notification de libération de sûreté"
+
 #: ../conditions/configure.zcml:35
 msgid "urban.schedule.condition.has_amended_plans"
 msgstr "Intention de dépôt de plans modifiés déposée"

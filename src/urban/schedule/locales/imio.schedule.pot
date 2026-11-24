@@ -34,6 +34,14 @@ msgstr ""
 msgid "urban.schedule.condition.cession_event_created"
 msgstr ""
 
+#: ../conditions/configure.zcml
+msgid "urban.schedule.condition.provision_of_security_event_created"
+msgstr ""
+
+#: ../conditions/configure.zcml
+msgid "urban.schedule.condition.release_of_security_received"
+msgstr ""
+
 #: ../conditions/configure.zcml:35
 msgid "urban.schedule.condition.has_amended_plans"
 msgstr ""
