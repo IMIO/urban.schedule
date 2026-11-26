@@ -8,6 +8,16 @@ Changelog
 
 .. towncrier release notes start
 
+1.0.4 (2026-11-26)
+------------------
+
+New features:
+
+
+- Add start and end conditions for the provision of security task.
+  [WBoudabous] (URB-3678)
+
+
 1.0.3 (2026-10-17)
 ------------------
 
